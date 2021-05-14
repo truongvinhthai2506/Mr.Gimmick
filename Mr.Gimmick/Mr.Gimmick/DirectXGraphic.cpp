@@ -1,6 +1,6 @@
 ﻿#include "DirectXGraphic.h"
 
-bool DirectXGraphic::InitDirect3DObjects(HWND window, int width, int height, bool isFullscreen)
+bool DirectXGraphic::InitDirect3DObjects(HWND window, Dimension screenDimension, bool isFullscreen)
 {
 	//Khởi tạo đối tượng direct3D
 	this->direct3D = Direct3DCreate9(D3D_SDK_VERSION);
@@ -13,7 +13,7 @@ bool DirectXGraphic::InitDirect3DObjects(HWND window, int width, int height, boo
 	}
 
 	//Đảm bảo đối tượng graphicDevice đã được khởi tạo
-	if (!this->graphicDevice.InitDevice(this->direct3D, window, width, height, isFullscreen))
+	if (!this->graphicDevice.InitDevice(this->direct3D, window, screenDimension, isFullscreen))
 	{
 		return 0;
 	}

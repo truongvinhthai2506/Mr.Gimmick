@@ -6,8 +6,7 @@ class WaterfallTile : public WaterTile
 {
 public:
     WaterfallTile();
-    WaterfallTile(float x, float y, float spriteWidth, float spriteHeight, LPCWSTR fileSpriteName,
-        int lastSpriteFrame, int animationDelay, int currentSpriteFrame = 0, int animationCount = 0);
+    WaterfallTile(Point point, Sprite* sprite);
     Tile* Clone();
     string GetType();
 };

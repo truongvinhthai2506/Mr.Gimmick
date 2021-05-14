@@ -1,1 +1,144 @@
-﻿  Mr.Gimmick.vcxproj -> C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Debug\Mr.Gimmick.exe
+﻿  AnimatedAndImmovableObj.cpp
+  AnimatedAndMovableObj.cpp
+  AnimatedObj.cpp
+  AnimatedTile.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\AnimatedTile.cpp(109,21): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\AnimatedTile.cpp(110,20): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\AnimatedTile.cpp(111,30): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\AnimatedTile.cpp(112,32): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+  Background.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Background.cpp(91,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Background.cpp(93,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Background.cpp(214,42): warning C4101: 'size': unreferenced local variable
+  Bosses.cpp
+  Camera.cpp
+  Door.cpp
+  Enemies.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Enemies.h(15,12): warning C4305: 'argument': truncation from 'double' to 'float'
+  Flag.cpp
+  FlagTile.cpp
+  Game.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Enemies.h(15,12): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\PassiveCreatures.h(15,21): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(167,100): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(168,101): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(183,71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(189,71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(195,71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(370,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(370,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(371,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(371,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(377,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(377,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(378,77): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(378,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(386,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(386,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(387,81): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(387,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(394,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(394,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(395,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(395,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(431,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(431,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(433,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(433,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(440,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(440,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(441,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(441,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(451,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(459,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(470,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.cpp(483,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  HazardsAndInteractables.cpp
+  InanimatedTile.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\InanimatedTile.cpp(39,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\InanimatedTile.cpp(43,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\InanimatedTile.cpp(48,30): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\InanimatedTile.cpp(49,29): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\InanimatedTile.cpp(50,33): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\InanimatedTile.cpp(51,34): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+  ItemsAndHUD.cpp
+  Map.cpp
+  PassiveCreatures.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\PassiveCreatures.h(15,21): warning C4305: 'argument': truncation from 'double' to 'float'
+  PipeTile.cpp
+  PlayableObj.cpp
+  Pulley.cpp
+  Generating Code...
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\AnimatedTile.cpp(114): warning C4172: returning address of local variable or temporary: rectangle
+  Compiling...
+  Quadtree.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Quadtree.cpp(73,47): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Quadtree.cpp(77,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Rope.cpp
+  Scene.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Scene.cpp(11,11): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Scene.cpp(12,10): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Scene.cpp(13,12): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Scene.cpp(14,13): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+  SceneIntro.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\SceneIntro.cpp(45,105): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\SceneIntro.cpp(45,79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SceneManager.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Enemies.h(15,12): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\PassiveCreatures.h(15,21): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Scene.h(15,1): warning C4005: 'SCREEN_WIDTH': macro redefinition
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.h(28): message : see previous definition of 'SCREEN_WIDTH'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Scene.h(16,1): warning C4005: 'SCREEN_HEIGHT': macro redefinition
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Game.h(29): message : see previous definition of 'SCREEN_HEIGHT'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\SceneManager.cpp(20,6): warning C4101: 'msg': unreferenced local variable
+  SceneMap.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\SceneMap.cpp(19,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\SceneMap.cpp(20,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\SceneMap.cpp(44,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\SceneMap.cpp(63,99): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\SceneMap.cpp(63,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  ScenePlay.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  SceneStartMenu.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  SceneryTile.cpp
+  ScrollBar.cpp
+  ScrollBarTile.cpp
+  TerrainTile.cpp
+  Tileset.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Tileset.cpp(32,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Tileset.cpp(32,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Tileset.cpp(33,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Tileset.cpp(37,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Tileset.cpp(37,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Tileset.cpp(38,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  TransformHandler.cpp
+  Treasures.cpp
+  UnplayableObj.cpp
+  UsefulObj.cpp
+  UselessObj.cpp
+  WaterTile.cpp
+  Waterfall.cpp
+  Generating Code...
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\TransformHandler.cpp(28): warning C4172: returning address of local variable or temporary: translationMatrix
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\TransformHandler.cpp(19): warning C4172: returning address of local variable or temporary: transformMatrix
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\TransformHandler.cpp(8): warning C4172: returning address of local variable or temporary: scaleMatrix
+  Compiling...
+  WaterfallTile.cpp
+  WindowHandler.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Enemies.h(15,12): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\PassiveCreatures.h(15,21): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\WindowHandler.cpp(45,1): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Yumetaro.cpp
+  main.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\Enemies.h(15,12): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Mr.Gimmick\PassiveCreatures.h(15,21): warning C4305: 'argument': truncation from 'double' to 'float'
+  Generating Code...
+  Mr.Gimmick.vcxproj -> C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick\Mr.Gimmick\Debug\Mr.Gimmick.exe

@@ -1,8 +1,9 @@
 ﻿#pragma once
 
-#include "Device.h"
 #include <d3d9.h>
 #include <d3dx9.h>
+#include "Dimension.h"
+#include "Device.h"
 #include "IOHandler.h"
 
 class GraphicDevice : public Device
@@ -11,7 +12,7 @@ private:
 	LPDIRECT3DDEVICE9 device;		//Biến đại diện cho card đồ họa máy tính
 	LPDIRECT3DSURFACE9 backbuffer;
 public:
-	bool InitDevice(LPDIRECT3D9 direct3D, HWND window, int width, int height, bool isFullscreen);
+	bool InitDevice(LPDIRECT3D9 direct3D, HWND window, Dimension screenDimension, bool isFullscreen);
 	void ReleaseDevice();
 	HRESULT CreateSurface(D3DXIMAGE_INFO imageInfo, LPDIRECT3DSURFACE9& image);
 	HRESULT CreateTexture(LPCWSTR filename, D3DXIMAGE_INFO& imageInfo, D3DCOLOR transparentColor, 

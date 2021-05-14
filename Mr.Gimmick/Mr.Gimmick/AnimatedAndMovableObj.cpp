@@ -5,10 +5,10 @@ AnimatedAndMovableObj::AnimatedAndMovableObj()
 	this->state = NULL;
 }
 
-AnimatedAndMovableObj::AnimatedAndMovableObj(float x, float y, int numberOfAnimatedTiles, float vX, 
-	float vY, int gameObjID) : AnimatedObj(x, y, numberOfAnimatedTiles, gameObjID)
+AnimatedAndMovableObj::AnimatedAndMovableObj(Point point, int numberOfAnimatedTiles, 
+	Velocity velocity, int gameObjID) : AnimatedObj(point, numberOfAnimatedTiles, gameObjID)
 {
-	this->velocity = Velocity(vX, vY);
+	this->velocity = velocity;
 	this->state = new IdleState();
 }
 
@@ -48,21 +48,22 @@ AnimatedAndMovableObj::~AnimatedAndMovableObj()
 	Clean();
 }
 
-void AnimatedAndMovableObj::Move(int screenWidth, int screenHeight)
+void AnimatedAndMovableObj::Move(Dimension screenDimension)
 {
 	float x = this->point.GetFirstValue() + this->velocity.GetFirstValue();
 	float y = this->point.GetSecondValue() + this->velocity.GetSecondValue();
-	this->point.SetValue(x, y);
+	Point newPoint(x, y);
+	this->point.SetValue(newPoint);
 	
 	for (int i = 0; i < this->numberOfAnimatedTiles; i++)
 	{
-		this->animatedTiles[i]->SetPoint(x, y);
+		this->animatedTiles[i]->SetPoint(newPoint);
 	}
 }
 
-void AnimatedAndMovableObj::SetVelocity(float vX, float vY)
+void AnimatedAndMovableObj::SetVelocity(Velocity velocity)
 {
-	this->velocity.SetValue(vX, vY);
+	this->velocity.SetValue(velocity);
 }
 
 void AnimatedAndMovableObj::SetState(State* state)

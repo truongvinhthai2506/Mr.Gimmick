@@ -10,9 +10,9 @@ void TwoDimensionObj::SetFirstValueOfDimension(int firstValueOfDimension)
 	this->dimension.SetFirstValue(firstValueOfDimension);
 }
 
-void TwoDimensionObj::IncreaseValueOfPoint(int additionalFirstValue, int additionalSecondValue)
+void TwoDimensionObj::IncreaseValueOfPoint(Pair value)
 {
-	this->point.IncreaseValue(additionalFirstValue, additionalSecondValue);
+	this->point.IncreaseValue(value);
 }
 
 void TwoDimensionObj::IncreaseSecondValueOfPoint(int additionalSecondValue)
@@ -30,9 +30,9 @@ TwoDimensionObj::TwoDimensionObj()
 
 }
 
-TwoDimensionObj::TwoDimensionObj(float x, float y)
+TwoDimensionObj::TwoDimensionObj(Point point)
 {
-	this->point = Point(x, y);
+	this->point = point;;
 }
 
 Point TwoDimensionObj::GetPoint()
@@ -40,9 +40,9 @@ Point TwoDimensionObj::GetPoint()
 	return this->point;
 }
 
-void TwoDimensionObj::SetPoint(float x, float y)
+void TwoDimensionObj::SetPoint(Point point)
 {
-	this->point.SetValue(x, y);
+	this->point.SetValue(point);
 }
 
 Dimension TwoDimensionObj::GetDimension()

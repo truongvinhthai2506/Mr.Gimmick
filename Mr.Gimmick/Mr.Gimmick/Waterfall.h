@@ -6,7 +6,7 @@ class Waterfall : public UselessObj
 {
 public:
     Waterfall();
-    Waterfall(float x, float y, int numberOfAnimatedTiles, int gameObjID);
+    Waterfall(Point point, int numberOfAnimatedTiles, int gameObjID);
     string GetType();
     UselessObj* Clone();
 };

@@ -1,9 +1,9 @@
 #include "DirectX.h"
 
-bool DirectX::InitDirectX(HWND window, int screenWidth, int screenHeight, bool isFullscreen)
+bool DirectX::InitDirectX(HWND window, Dimension screenDimension, bool isFullscreen)
 {
 	//make sure Direct3D objects was created okay
-	if (!this->directXGraphic.InitDirect3DObjects(window, screenWidth, screenHeight, isFullscreen))
+	if (!this->directXGraphic.InitDirect3DObjects(window, screenDimension, isFullscreen))
 	{
 		return 0;
 	}

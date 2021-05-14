@@ -10,7 +10,7 @@ protected:
 	LPCWSTR filename;
 public:
 	Image();
-	Image(float width, float height, LPCWSTR filename);
+	Image(Dimension dimension, LPCWSTR filename);
 	Dimension GetDimension();
 	LPCWSTR GetFilename();
 };

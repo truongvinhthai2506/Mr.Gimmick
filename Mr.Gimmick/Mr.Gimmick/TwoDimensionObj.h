@@ -13,13 +13,13 @@ protected:
 public:
 	void SetFirstValueOfPoint(int firstValueOfPoint);
 	void SetFirstValueOfDimension(int firstValueOfDimension);
-	void IncreaseValueOfPoint(int additionalFirstValue, int additionalSecondValue);
+	void IncreaseValueOfPoint(Pair value);
 	void IncreaseSecondValueOfPoint(int additionalSecondValue);
 	void IncreaseFirstValueOfPoint(int additionalFirstValue);
 	TwoDimensionObj();
-	TwoDimensionObj(float x, float y);
+	TwoDimensionObj(Point point);
 	Point GetPoint();
-	void SetPoint(float x, float y);
+	void SetPoint(Point point);
 	Dimension GetDimension();
 	Box GetBox();
 	void SetDimension(Dimension dimension);

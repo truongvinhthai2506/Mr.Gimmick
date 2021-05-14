@@ -8,7 +8,6 @@ D3DXMATRIX* TransformHandler::GetScaleMatrix(Pair scale)
     return &scaleMatrix;
 }
 
-// *
 const D3DXMATRIX* TransformHandler::GetTransformMatrix(Point cameraPoint)
 {
     D3DXMATRIX transformMatrix;
@@ -28,4 +27,3 @@ D3DXMATRIX* TransformHandler::GetTranslationMatrix(Pair translation)
 
     return &translationMatrix;
 }
-// *

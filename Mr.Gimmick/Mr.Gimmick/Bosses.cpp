@@ -5,11 +5,12 @@ Bosses::Bosses()
 
 }
 
-Bosses::Bosses(float x, float y, int gameObjID, float vX, float vY, int numberOfAnimatedTiles, 
-	float width, float height, LPCWSTR fileSpriteName) : UnplayableObj(x, y, numberOfAnimatedTiles, vX, 
-	vY, gameObjID)
+Bosses::Bosses(Point point, int gameObjID, Velocity velocity, int numberOfAnimatedTiles, 
+	Dimension dimension, LPCWSTR fileSpriteName) : UnplayableObj(point, numberOfAnimatedTiles, 
+	velocity, gameObjID)
 {
-	this->animatedTiles[0] = new AnimatedTile(x, y, width, height, fileSpriteName, 1, 0, 1);
+	Sprite* sprite = new Sprite(dimension, fileSpriteName, 1, 0, 1);
+	this->animatedTiles[0] = new AnimatedTile(point, sprite);
 	SetDimension();
 }
 

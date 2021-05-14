@@ -25,7 +25,7 @@ void Camera::Update(Yumetaro yumetaro, TwoDimensionObj scene, int tileSize)
 	}
 }
 
-Camera::Camera(float x, float y, Dimension dimension) : TwoDimensionObj(x, y)
+Camera::Camera(Point point, Dimension dimension) : TwoDimensionObj(point)
 {
 	this->dimension = dimension;
 }

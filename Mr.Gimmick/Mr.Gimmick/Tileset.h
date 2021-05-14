@@ -29,7 +29,7 @@ public:
 	Tileset(const Tileset& tileset);
 	void Clean();
 	Tileset& operator = (const Tileset& tileset);
-	~Tileset(); 
+	~Tileset();
 	bool CheckTile(int value, int numberOfRows, int firstTile, int numberOfTiles,
 		int numberOfTilesInOneRow);
 	void LoadTileset(DirectXGraphic directXGraphic);

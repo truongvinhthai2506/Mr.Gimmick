@@ -10,7 +10,7 @@ protected:
 	int numberOfAnimatedTiles;
 public:
 	AnimatedObj();
-	AnimatedObj(float x, float y, int numberOfAnimatedTiles, int gameObjID);
+	AnimatedObj(Point point, int numberOfAnimatedTiles, int gameObjID);
 	AnimatedObj(const AnimatedObj& animatedObj);
 	~AnimatedObj();
 	void SetDimension();

@@ -4,77 +4,77 @@
     <Position X="20.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Bosses.h</FileName>
+      <FileName>Bosses.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Box" Collapsed="true">
     <Position X="36" Y="16.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAACAAAAAAAAAAAAAAABAAAIAAAAAAAQAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Box.h</FileName>
+      <FileName>Box.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DirectInput" Collapsed="true">
     <Position X="36" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACBAAAAAAAAABAAAAAAEAAAAAAABAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\DirectInput.h</FileName>
+      <FileName>DirectInput.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DirectSound" Collapsed="true">
     <Position X="38.25" Y="13.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\DirectSound.h</FileName>
+      <FileName>DirectSound.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DirectX" Collapsed="true">
     <Position X="1.75" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACAAAAAAEAAACAAAAAAIAAAAAAACAAgAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\DirectX.h</FileName>
+      <FileName>DirectX.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DirectXGraphic" Collapsed="true">
     <Position X="40.75" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAEAAIBBAAAAAAAAAAAAAAAAAAAAAAQAAAAABAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\DirectXGraphic.h</FileName>
+      <FileName>DirectXGraphic.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Enemies" Collapsed="true">
     <Position X="16.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Enemies.h</FileName>
+      <FileName>Enemies.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FileHandler" Collapsed="true">
     <Position X="14.5" Y="13.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\FileHandler.h</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>FileHandler.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Flag" Collapsed="true">
     <Position X="25.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Flag.h</FileName>
+      <FileName>Flag.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Game" Collapsed="true">
     <Position X="36" Y="17.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAKAJAAAEAQgAAAAAABQUgAAAmAAAAJEJQAAIEwoAU=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Game.h</FileName>
+      <HashCode>ACAKAJAAAkAQgAAIAAABQcgAAQmAAAAJEJQAAIEwoAU=</HashCode>
+      <FileName>Game.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameObj" Collapsed="true">
     <Position X="39" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\GameObj.h</FileName>
+      <HashCode>AAAAAAAAAAAAAAAQAAIAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GraphicDevice" Collapsed="true">
@@ -89,21 +89,21 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAQAAAACAIABC4AABBAAAAAAAAEAAQAAAABAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\GraphicDevice.h</FileName>
+      <FileName>GraphicDevice.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Handler" Collapsed="true">
     <Position X="14.5" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Handler.h</FileName>
+      <FileName>Handler.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AnimatedAndImmovableObj" Collapsed="true">
     <Position X="33.5" Y="4.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\AnimatedAndImmovableObj.h</FileName>
+      <FileName>AnimatedAndImmovableObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InputDevice" Collapsed="true">
@@ -118,35 +118,35 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAACCAABAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\InputDevice.h</FileName>
+      <FileName>InputDevice.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HazardsAndInteractables" Collapsed="true">
     <Position X="43.25" Y="4.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAgAACAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\HazardsAndInteractables.h</FileName>
+      <FileName>HazardsAndInteractables.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IOHandler" Collapsed="true">
     <Position X="9.75" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\IOHandler.h</FileName>
+      <FileName>IOHandler.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Keyboard" Collapsed="true">
     <Position X="27.75" Y="19.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Keyboard.h</FileName>
+      <FileName>Keyboard.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Background" Collapsed="true">
     <Position X="36" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAIAAAAAAAAgACwgAAAAABIAAkBAAAQAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Background.h</FileName>
+      <FileName>Background.h</FileName>
       <NewMemberFileName>Map.h</NewMemberFileName>
     </TypeIdentifier>
   </Class>
@@ -154,294 +154,294 @@
     <Position X="30" Y="19.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAAAAEAAAAEAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Mouse.h</FileName>
+      <FileName>Mouse.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AnimatedAndMovableObj" Collapsed="true">
     <Position X="16" Y="4.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAABEAEAIAAAAAAAAAAAAAAAgAAAAAEAAQgEAAAQAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\AnimatedAndMovableObj.h</FileName>
+      <FileName>AnimatedAndMovableObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pipe" Collapsed="true">
     <Position X="48.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Pipe.h</FileName>
+      <FileName>Pipe.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PlayableObj" Collapsed="true">
     <Position X="14" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\PlayableObj.h</FileName>
+      <FileName>PlayableObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Point" Collapsed="true">
     <Position X="25.75" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Point.h</FileName>
+      <FileName>Point.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ScrollBar" Collapsed="true">
     <Position X="27.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAEAAAAAAAAAABA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\ScrollBar.h</FileName>
+      <FileName>ScrollBar.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tile" Collapsed="true">
     <Position X="6.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAgAAAAAAAAAAAAAAAAEAAAAAAAAAARA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Tile.h</FileName>
+      <FileName>Tile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tilemap" Collapsed="true">
     <Position X="43.75" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQABAAAAAAIAAAASACCCCQgAAAAAAAAAgAAAIQAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Tilemap.h</FileName>
+      <FileName>Tilemap.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TransformHandler" Collapsed="true">
     <Position X="12" Y="13.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\TransformHandler.h</FileName>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAIAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>TransformHandler.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Treasures" Collapsed="true">
     <Position X="41" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Treasures.h</FileName>
+      <FileName>Treasures.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PassiveCreatures" Collapsed="true">
     <Position X="18.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\PassiveCreatures.h</FileName>
+      <FileName>PassiveCreatures.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Velocity" Collapsed="true">
     <Position X="28" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Velocity.h</FileName>
+      <FileName>Velocity.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Waterfall" Collapsed="true">
     <Position X="23" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Waterfall.h</FileName>
+      <FileName>Waterfall.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowHandler" Collapsed="true">
     <Position X="16.75" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAQgAAAAAAAAAAAIAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\WindowHandler.h</FileName>
+      <FileName>WindowHandler.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Yumetaro" Collapsed="true">
     <Position X="14" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAwAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Yumetaro.h</FileName>
+      <HashCode>AAAAwAAAAIAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Yumetaro.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Terrain" Collapsed="true">
     <Position X="53.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Terrain.h</FileName>
+      <FileName>Terrain.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PipeTile" Collapsed="true">
     <Position X="11.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\PipeTile.h</FileName>
+      <FileName>PipeTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TerrainTile" Collapsed="true">
     <Position X="7.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\TerrainTile.h</FileName>
+      <FileName>TerrainTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WaterTile" Collapsed="true">
     <Position X="0.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\WaterTile.h</FileName>
+      <FileName>WaterTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ScrollBarTile" Collapsed="true">
     <Position X="2.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAQAAAAABA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\ScrollBarTile.h</FileName>
+      <FileName>ScrollBarTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FlagTile" Collapsed="true">
     <Position X="5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\FlagTile.h</FileName>
+      <FileName>FlagTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SceneryTile" Collapsed="true">
     <Position X="9.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\SceneryTile.h</FileName>
+      <FileName>SceneryTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Scenery" Collapsed="true">
     <Position X="51" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Scenery.h</FileName>
+      <FileName>Scenery.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Camera" Collapsed="true">
-    <Position X="4" Y="13.25" Width="1.5" />
+    <Position X="14.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Camera.h</FileName>
+      <HashCode>AAQCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Camera.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Scene" Collapsed="true">
     <Position X="18.5" Y="16.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAgAggAAAAAAAIAIAAiAIAIAAAIAAAAI=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Scene.h</FileName>
+      <FileName>Scene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SceneManager" Collapsed="true">
     <Position X="6.25" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAEAAAAAAQIAAAAIAAEAIAAAAAAAAAAY=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\SceneManager.h</FileName>
+      <FileName>SceneManager.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pair" Collapsed="true">
     <Position X="29" Y="12" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAEAkAEgAAAAAAAAAAAAAAAQAAAAAAAAAAABA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Pair.h</FileName>
+      <HashCode>BAEAAAAAEAkAEgAAAAAAAAAAAAAAEQAABAAAAAAAABA=</HashCode>
+      <FileName>Pair.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Vector" Collapsed="true">
     <Position X="32.5" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Vector.h</FileName>
+      <FileName>Vector.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dimension" Collapsed="true">
     <Position X="30.25" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Dimension.h</FileName>
+      <FileName>Dimension.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Image" Collapsed="true">
     <Position X="22.5" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAAAAQAAAAAAABAAAAAABAAAAAAAAAAQAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Image.h</FileName>
+      <FileName>Image.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpriteHandler" Collapsed="true">
     <Position X="19" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAQgAAgCAAAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\SpriteHandler.h</FileName>
+      <FileName>SpriteHandler.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sprite" Collapsed="true">
     <Position X="22.5" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAAAAAAQAAAAAAAAQAAAIAAAAABA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Sprite.h</FileName>
+      <FileName>Sprite.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TwoDimensionObj" Collapsed="true">
     <Position X="22" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAIACABgAAAAQAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\TwoDimensionObj.h</FileName>
+      <HashCode>AAAAIACABgABAAQAAAQAAABAIAAAgAAAAAAAAEAABCA=</HashCode>
+      <FileName>TwoDimensionObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Device" Collapsed="true">
     <Position X="27" Y="16.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Device.h</FileName>
+      <FileName>Device.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DirectXComponent" Collapsed="true">
     <Position X="38.25" Y="12" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\DirectXComponent.h</FileName>
+      <FileName>DirectXComponent.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BackgroundComponent" Collapsed="true">
     <Position X="44.5" Y="12" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\BackgroundComponent.h</FileName>
+      <FileName>BackgroundComponent.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tileset" Collapsed="true">
     <Position X="46" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQABAAAAAAAAAAAAAAAAAAgAgAKgAAAAgAACIQAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Tileset.h</FileName>
+      <FileName>Tileset.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameComponent" Collapsed="true">
     <Position X="4" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\GameComponent.h</FileName>
+      <FileName>GameComponent.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="State" Collapsed="true">
     <Position X="6.25" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\State.h</FileName>
+      <FileName>State.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IdleState" Collapsed="true">
     <Position X="0.5" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\IdleState.h</FileName>
+      <FileName>IdleState.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RunState" Collapsed="true">
     <Position X="2.75" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\RunState.h</FileName>
+      <FileName>RunState.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FlyState" Collapsed="true">
     <Position X="5" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\FlyState.h</FileName>
+      <FileName>FlyState.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DizzyState" Collapsed="true">
@@ -456,14 +456,14 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\DizzyState.h</FileName>
+      <FileName>DizzyState.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SlideState" Collapsed="true">
     <Position X="7.25" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\SlideState.h</FileName>
+      <FileName>SlideState.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DieState" Collapsed="true">
@@ -478,152 +478,152 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\DieState.h</FileName>
+      <FileName>DieState.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AnimatedTile" Collapsed="true">
     <Position X="2.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAhACAAABgEgAAAAABAAQAABAAAgEAAAAAAAAAABA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\AnimatedTile.h</FileName>
+      <FileName>AnimatedTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InanimatedTile" Collapsed="true">
     <Position X="9.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAgAAAAQAAAAAEAAAQAEAAAAAAABAABA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\InanimatedTile.h</FileName>
+      <FileName>InanimatedTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AnimatedObj" Collapsed="true">
     <Position X="29.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAgAAAAAAAAoAAAQAAAACAAgAAAAAAAAAgAEAAQEA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\AnimatedObj.h</FileName>
+      <FileName>AnimatedObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InanimatedObj" Collapsed="true">
     <Position X="48.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\InanimatedObj.h</FileName>
+      <FileName>InanimatedObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Map" Collapsed="true">
     <Position X="36.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Map.h</FileName>
+      <FileName>Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UnplayableObj" Collapsed="true">
     <Position X="18.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\UnplayableObj.h</FileName>
+      <FileName>UnplayableObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ItemsAndHUD" Collapsed="true">
     <Position X="38.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgABAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\ItemsAndHUD.h</FileName>
+      <FileName>ItemsAndHUD.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UsefulObj" Collapsed="true">
     <Position X="38.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\UsefulObj.h</FileName>
+      <FileName>UsefulObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UselessObj" Collapsed="true">
     <Position X="28.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAEAIAAAAAAAABA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\UselessObj.h</FileName>
+      <FileName>UselessObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SceneIntro" Collapsed="true">
     <Position X="15.25" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAIAAAAAABAAQAAAAAI=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\SceneIntro.h</FileName>
+      <FileName>SceneIntro.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SceneMap" Collapsed="true">
     <Position X="22" Y="18.25" Width="1.5" />
     <InheritanceLine Type="Scene">
       <InheritanceModifierLabel ManuallyPlaced="true">
-        <Position X="0.11" Y="-1.343" />
+        <Position X="0.16" Y="0.074" />
       </InheritanceModifierLabel>
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAEAAAAAAAAAAAIAAAAAAAAAAQAACAI=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\SceneMap.h</FileName>
+      <FileName>SceneMap.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ScenePlay" Collapsed="true">
     <Position X="17.5" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAQAAAAECAAAAAAAAAACAAAAIAAAAAABAAAAAAIAI=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\ScenePlay.h</FileName>
+      <FileName>ScenePlay.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SceneStartMenu" Collapsed="true">
     <Position X="19.75" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAACAAAAAAABAAAAAAAMAAQAAAAAAAAAAAAI=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\SceneStartMenu.h</FileName>
+      <FileName>SceneStartMenu.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InanimatedAndMovableObj" Collapsed="true">
     <Position X="46" Y="4.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\InanimatedAndMovableObj.h</FileName>
+      <FileName>InanimatedAndMovableObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InanimatedAndImmovableObj" Collapsed="true">
     <Position X="50.5" Y="4.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\InanimatedAndImmovableObj.h</FileName>
+      <FileName>InanimatedAndImmovableObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UFO" Collapsed="true">
     <Position X="46.25" Y="6.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\UFO.h</FileName>
+      <FileName>UFO.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pulley" Collapsed="true">
     <Position X="32" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Pulley.h</FileName>
+      <FileName>Pulley.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Rope" Collapsed="true">
     <Position X="29.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Rope.h</FileName>
+      <FileName>Rope.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Door" Collapsed="true">
     <Position X="34.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Door.h</FileName>
+      <FileName>Door.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Level" Collapsed="true">
     <Position X="33" Y="16.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Level.h</FileName>
+      <FileName>Level.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LevelOne" Collapsed="true">
@@ -636,28 +636,35 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\LevelOne.h</FileName>
+      <FileName>LevelOne.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TreeObj" Collapsed="true">
     <Position X="36" Y="19" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAEIAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\TreeObj.h</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAkAAEIAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>TreeObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Quadtree" Collapsed="true">
     <Position X="36" Y="19.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAABAAAAAAAAAAAAAAgAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Quadtree.h</FileName>
+      <HashCode>AIAADAAARgAAAAAAAAAgAAAAAAAgAAAAAEAAAgAAAAA=</HashCode>
+      <FileName>Quadtree.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="QuadtreeNode" Collapsed="true">
-    <Position X="22" Y="2" Width="1.75" />
+    <Position X="22" Y="1.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAQAEAAAQAAAKAACAIIAAAAIAAAAEAgQAAAIAAAAAA=</HashCode>
-      <FileName>C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\QuadtreeNode.h</FileName>
+      <HashCode>AACQAEAAAQAAAKAACAIohAAAIAAAAEAgQAAAIAAIAIA=</HashCode>
+      <FileName>QuadtreeNode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WaterfallTile" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAAAAAAAABA=</HashCode>
+      <FileName>WaterfallTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

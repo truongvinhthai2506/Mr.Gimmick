@@ -23,10 +23,10 @@ class Yumetaro : public PlayableObj
 public:
     Yumetaro(const Yumetaro& yumetaro);
     Yumetaro();
-    Yumetaro(float x, float y, float vX, float vY, int numberOfAnimatedTiles, float width, float height, 
+    Yumetaro(Point point, Velocity velocity, int numberOfAnimatedTiles, Dimension dimension, 
         LPCWSTR fileSpriteName, int gameObjID);
     Yumetaro& operator = (const Yumetaro& yumetaro);
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic);
     void Animate();
-    void Move(int screenWidth, int screenHeight);
+    void Move(Dimension dimension);
 };

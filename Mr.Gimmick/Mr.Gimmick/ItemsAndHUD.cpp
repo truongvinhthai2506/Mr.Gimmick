@@ -5,10 +5,12 @@ ItemsAndHUD::ItemsAndHUD()
 
 }
 
-ItemsAndHUD::ItemsAndHUD(float x, float y, int gameObjID, int currentFrame, float width, float height,
-	int numberOfAnimatedTiles, LPCWSTR fileSpriteName) : UsefulObj(x, y, numberOfAnimatedTiles, gameObjID)
+ItemsAndHUD::ItemsAndHUD(Point point, int gameObjID, int currentFrame, Dimension dimension,
+	int numberOfAnimatedTiles, LPCWSTR fileSpriteName) : UsefulObj(point, numberOfAnimatedTiles, 
+	gameObjID)
 {
-	this->animatedTiles[0] = new AnimatedTile(x, y, width, height, fileSpriteName, 1, 0, currentFrame);
+	Sprite* sprite = new Sprite(dimension, fileSpriteName, 1, 0, currentFrame);
+	this->animatedTiles[0] = new AnimatedTile(point, sprite);
 	SetDimension();
 }
 

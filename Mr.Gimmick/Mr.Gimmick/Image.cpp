@@ -5,9 +5,9 @@ Image::Image()
     
 }
 
-Image::Image(float width, float height, LPCWSTR filename)
+Image::Image(Dimension dimension, LPCWSTR filename)
 {
-    this->dimension = Dimension(width, height);
+    this->dimension = dimension;
     this->filename = filename;
 }
 

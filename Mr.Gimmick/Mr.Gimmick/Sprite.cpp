@@ -5,8 +5,8 @@ Sprite::Sprite()
 
 }
 
-Sprite::Sprite(float width, float height, LPCWSTR filename, int lastFrame, int animationDelay, 
-	int currentFrame, int animationCount) : Image(width, height, filename)
+Sprite::Sprite(Dimension dimension, LPCWSTR filename, int lastFrame, int animationDelay, 
+	int currentFrame, int animationCount) : Image(dimension, filename)
 {
 	this->spriteHandler = SpriteHandler(lastFrame, animationDelay, currentFrame, animationCount);
 }

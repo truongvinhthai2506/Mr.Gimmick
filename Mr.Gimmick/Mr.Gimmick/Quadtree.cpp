@@ -14,7 +14,7 @@ Quadtree::Quadtree(float length, int numberOfTreeObjs, TreeObj* treeObjs)
 		treeObjList.push_back(treeObjs[i]);
 	}
 
-	this->root = new QuadtreeNode(0, 0, 0, Dimension(length, length), treeObjList);
+	this->root = new QuadtreeNode(0, Point(), Dimension(length, length), treeObjList);
 }
 
 void Quadtree::BuildQuadtree(float length, QuadtreeNode* quadtreeNode)
@@ -74,8 +74,8 @@ map<int, QuadtreeNode*> Quadtree::InitQuadtreeNodeFromFile(map<int, GameObj*> ga
 			}
 		}
 
-		QuadtreeNode* quadtreeNode = new QuadtreeNode(data[0], data[1], data[2], Dimension(data[3],
-			data[4]), treeObjs);
+		QuadtreeNode* quadtreeNode = new QuadtreeNode(data[0], Point(data[1], data[2]), 
+			Dimension(data[3], data[4]), treeObjs);
 		quadtreeNodes.insert(pair<int, QuadtreeNode*>(quadtreeNode->GetID(), quadtreeNode));
 		treeObjs.clear();
 		delete[] data;

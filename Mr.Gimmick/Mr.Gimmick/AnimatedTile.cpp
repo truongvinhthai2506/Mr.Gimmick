@@ -2,21 +2,24 @@
 
 AnimatedTile::AnimatedTile()
 {
-
+	this->numberOfDrawings = 0;
+	this->sprite = NULL;
+	this->texture = NULL;
 }
 
-AnimatedTile::AnimatedTile(float x, float y, float spriteWidth, float spriteHeight, 
-	LPCWSTR fileSpriteName, int lastSpriteFrame, int animationDelay, int currentSpriteFrame, 
-	int animationCount) : Tile(x, y)
+AnimatedTile::AnimatedTile(Point point, Sprite* sprite) : Tile(point)
 {
-	this->dimension = Dimension(spriteWidth, spriteHeight);
-	this->sprite = new Sprite(spriteWidth, spriteHeight, fileSpriteName, lastSpriteFrame, animationDelay,
-		currentSpriteFrame, animationCount);
+	this->dimension = sprite->GetDimension();
+	this->numberOfDrawings = 0;
+	this->sprite = sprite;
+	this->texture = NULL;
 }
 
 AnimatedTile::AnimatedTile(const AnimatedTile& animatedTile)
 {
 	this->point = animatedTile.point;
+	this->dimension = animatedTile.dimension;
+	this->numberOfDrawings = animatedTile.numberOfDrawings;
 	this->texture = animatedTile.texture;
 	this->sprite = animatedTile.sprite->Clone();
 }

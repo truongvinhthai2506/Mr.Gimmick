@@ -131,12 +131,13 @@ void Game::InitUselessObjs(int key, int* numberOfUselessObjs)
 		{
 			case 0:
 			{
-				this->uselessObjs[i] = new ScrollBar(288, 288, 1, 20 + i - numberOfUselessObjs[key]);
+				this->uselessObjs[i] = new ScrollBar(Point(288, 288), 1, 20 + i - 
+					numberOfUselessObjs[key]);
 				break;
 			}
 			case 1:
 			{
-				this->uselessObjs[i] = new Waterfall(1056, 16, 1, 24);
+				this->uselessObjs[i] = new Waterfall(Point(1056, 16), 1, 24);
 				break;
 			}
 		}
@@ -149,22 +150,22 @@ void Game::InitEnemies()
 {
 	this->numberOfEnemies = NUMBER_OF_ENEMIES;
 	this->enemies = new Enemies[this->numberOfEnemies];
-	this->enemies[0] = Enemies(16 * 28, 16 * 22, 4);
-	this->enemies[1] = Enemies(16 * 30, 16 * 22, 5);
-	this->enemies[2] = Enemies(16 * 33, 16 * 21, 6);
-	this->enemies[3] = Enemies(16 * 37, 16 * 22, 7);
-	this->enemies[4] = Enemies(16 * 41, 16 * 21, 8);
-	this->enemies[5] = Enemies(16 * 45, 16 * 22, 9);
-	this->enemies[6] = Enemies(16 * 47, 16 * 22, 10);
-	this->enemies[7] = Enemies(16 * 49, 16 * 22, 11);
-	this->enemies[8] = Enemies(16 * 36, 16 * 31, 12);
-	this->enemies[9] = Enemies(16 * 114, 16 * 28, 13);
-	this->enemies[10] = Enemies(16 * 114, 16 * 19, 14);
-	this->enemies[11] = Enemies(16 * 108, 16 * 7, 15);
-	this->enemies[12] = Enemies(16 * 89, 16 * 10, 16);
-	this->enemies[13] = Enemies(16 * 85, 16 * 10, 17);
-	this->enemies[14] = Enemies(16 * 47, 16 * 40 - 3, 18, 2, 0, 1, 26);
-	this->enemies[15] = Enemies(16 * 117, 16 * 31 - 3, 19, 2, 0, 1, 26);
+	this->enemies[0] = Enemies(Point(16 * 28, 16 * 22), 4);
+	this->enemies[1] = Enemies(Point(16 * 30, 16 * 22), 5);
+	this->enemies[2] = Enemies(Point(16 * 33, 16 * 21), 6);
+	this->enemies[3] = Enemies(Point(16 * 37, 16 * 22), 7);
+	this->enemies[4] = Enemies(Point(16 * 41, 16 * 21), 8);
+	this->enemies[5] = Enemies(Point(16 * 45, 16 * 22), 9);
+	this->enemies[6] = Enemies(Point(16 * 47, 16 * 22), 10);
+	this->enemies[7] = Enemies(Point(16 * 49, 16 * 22), 11);
+	this->enemies[8] = Enemies(Point(16 * 36, 16 * 31), 12);
+	this->enemies[9] = Enemies(Point(16 * 114, 16 * 28), 13);
+	this->enemies[10] = Enemies(Point(16 * 114, 16 * 19), 14);
+	this->enemies[11] = Enemies(Point(16 * 108, 16 * 7), 15);
+	this->enemies[12] = Enemies(Point(16 * 89, 16 * 10), 16);
+	this->enemies[13] = Enemies(Point(16 * 85, 16 * 10), 17);
+	this->enemies[14] = Enemies(Point(16 * 47, 16 * 40 - 3), 18, Velocity(2, 0), 1, Dimension(26, 19.4));
+	this->enemies[15] = Enemies(Point(16 * 117, 16 * 31 - 3), 19, Velocity(2, 0), 1, Dimension(26, 19.4));
 
 	for (int i = 0; i < this->numberOfEnemies; i++)
 	{
@@ -179,24 +180,26 @@ void Game::InitHazardsAndInteractables()
 
 	for (int i = 0; i < 2; i++)
 	{
-		this->hazardsAndInteractables[i] = HazardsAndInteractables(16 * (55 - i * 3), 16 * 27, 25 + i);
+		this->hazardsAndInteractables[i] = HazardsAndInteractables(Point(16 * (55 - i * 3), 16 * 27), 
+			25 + i);
 	}
 
 	for (int i = 2; i < 6; i++)
 	{
-		this->hazardsAndInteractables[i] = HazardsAndInteractables(16 * (53 + (i - 2) * 2), 16 * 39, 25 + 
-			i);
+		this->hazardsAndInteractables[i] = HazardsAndInteractables(Point(16 * (53 + (i - 2) * 2), 
+			16 * 39), 25 + i);
 	}
 
 	for (int i = 6; i < 8; i++)
 	{
-		this->hazardsAndInteractables[i] = HazardsAndInteractables(16 * (64 + (i - 6) * 2), 16 * 39, 25 + 
-			i);
+		this->hazardsAndInteractables[i] = HazardsAndInteractables(Point(16 * (64 + (i - 6) * 2), 
+			16 * 39), 25 + i);
 	}
 
-	this->hazardsAndInteractables[8] = HazardsAndInteractables(16 * 36, 16 * 28 - 2, 33, 6);
-	this->hazardsAndInteractables[9] = HazardsAndInteractables(16 * 74, 16 * 42 - 2, 34, 6);
-	this->hazardsAndInteractables[10] = HazardsAndInteractables(16 * 115 + 8, 16 * 41 + 1, 35 , 1, 53, 77);
+	this->hazardsAndInteractables[8] = HazardsAndInteractables(Point(16 * 36, 16 * 28 - 2), 33, 6);
+	this->hazardsAndInteractables[9] = HazardsAndInteractables(Point(16 * 74, 16 * 42 - 2), 34, 6);
+	this->hazardsAndInteractables[10] = HazardsAndInteractables(Point(16 * 115 + 8, 16 * 41 + 1), 35 , 
+		1, Dimension(53, 77));
 
 	for (int i = 0; i < this->numberOfHazardsAndInteractables; i++)
 	{
@@ -209,10 +212,10 @@ void Game::InitItemsAndHUD()
 {
 	this->numberOfItemsAndHUD = NUMBER_OF_ITEMS_AND_HUD;
 	this->itemsAndHUD = new ItemsAndHUD[this->numberOfItemsAndHUD];
-	this->itemsAndHUD[0] = ItemsAndHUD(16 * 27, 16 * 19, 42, 2);
-	this->itemsAndHUD[1] = ItemsAndHUD(16 * 34, 16 * 43, 43, 3);
-	this->itemsAndHUD[2] = ItemsAndHUD(16 * 126, 16 * 22, 44, 2);
-	this->itemsAndHUD[3] = ItemsAndHUD(16 * 127 - 6, 16 * 4 - 3, 45, 4);
+	this->itemsAndHUD[0] = ItemsAndHUD(Point(16 * 27, 16 * 19), 42, 2);
+	this->itemsAndHUD[1] = ItemsAndHUD(Point(16 * 34, 16 * 43), 43, 3);
+	this->itemsAndHUD[2] = ItemsAndHUD(Point(16 * 126, 16 * 22), 44, 2);
+	this->itemsAndHUD[3] = ItemsAndHUD(Point(16 * 127 - 6, 16 * 4 - 3), 45, 4);
 
 	for (int i = 0; i < this->numberOfItemsAndHUD; i++)
 	{
@@ -224,12 +227,12 @@ void Game::InitPassiveCreatures()
 {
 	this->numberOfPassiveCreatures = NUMBER_OF_PASSIVE_CREATURES;
 	this->passiveCreatures = new PassiveCreatures[this->numberOfPassiveCreatures];
-	this->passiveCreatures[0] = PassiveCreatures(16 * 110, 16 * 41, 36);
-	this->passiveCreatures[1] = PassiveCreatures(16 * 106, 16 * 41, 37);
-	this->passiveCreatures[2] = PassiveCreatures(16 * 102, 16 * 48 - 8, 38);
-	this->passiveCreatures[3] = PassiveCreatures(16 * 98, 16 * 47, 39);
-	this->passiveCreatures[4] = PassiveCreatures(16 * 94, 16 * 42, 40);
-	this->passiveCreatures[5] = PassiveCreatures(16 * 90, 16 * 39, 41);
+	this->passiveCreatures[0] = PassiveCreatures(Point(16 * 110, 16 * 41), 36);
+	this->passiveCreatures[1] = PassiveCreatures(Point(16 * 106, 16 * 41), 37);
+	this->passiveCreatures[2] = PassiveCreatures(Point(16 * 102, 16 * 48 - 8), 38);
+	this->passiveCreatures[3] = PassiveCreatures(Point(16 * 98, 16 * 47), 39);
+	this->passiveCreatures[4] = PassiveCreatures(Point(16 * 94, 16 * 42), 40);
+	this->passiveCreatures[5] = PassiveCreatures(Point(16 * 90, 16 * 39), 41);
 
 	for (int i = 0; i < this->numberOfPassiveCreatures; i++)
 	{
@@ -241,23 +244,25 @@ void Game::InitPassiveCreatures()
 // Khởi tạo game
 bool Game::InitGame(HWND window)
 {
-	this->camera = Camera(TILE_SIZE, TILE_SIZE * 13, Dimension(SCREEN_WIDTH / SCALE, SCREEN_HEIGHT / 
-		SCALE));
-	this->scene = TwoDimensionObj(16, 16 * 13);
+	Dimension screenDimension = SCREEN_DIMENSION;
+
+	this->camera = Camera(Point(TILE_SIZE, TILE_SIZE * 13), Dimension(SCREEN_WIDTH / SCALE, 
+		SCREEN_HEIGHT / SCALE));
+	this->scene = TwoDimensionObj(Point(16, 16 * 13));
 	this->scene.SetDimension(Dimension(16 * 64, 16 * 13));
 
 	this->window = window;
-	bool flag = this->directX.InitDirectX(this->window, SCREEN_WIDTH, SCREEN_HEIGHT, FULLSCREEN);
+	bool flag = this->directX.InitDirectX(this->window, screenDimension, FULLSCREEN);
 
-	this->yumetaro = Yumetaro(YUMETARO_START_X, YUMETARO_START_Y, YUMETARO_VELOCITY_X,
-		YUMETARO_VELOCITY_Y, 1, YUMETARO_WIDTH, YUMETARO_HEIGHT, SPRITE_YUMETARO_PATH, 1);
+	this->yumetaro = Yumetaro(Point(YUMETARO_START_X, YUMETARO_START_Y), Velocity(YUMETARO_VELOCITY_X,
+		YUMETARO_VELOCITY_Y), 1, Dimension(YUMETARO_WIDTH, YUMETARO_HEIGHT), SPRITE_YUMETARO_PATH, 1);
 
 	this->background = Background(NUMBER_OF_ROWS_LEVEL_ONE, NUMBER_OF_COLUMNS_LEVEL_ONE,
 		FILE_TILEMAP_PATH_LEVEL_ONE, NUMBER_OF_TILES_LEVEL_ONE, L"Level_1", BACKGROUND_COLOR_LEVEL_ONE);
 
-	this->boss = Bosses(16 * 70 - 4, 16 * 6, 2);
+	this->boss = Bosses(Point(16 * 70 - 4, 16 * 6), 2);
 
-	this->treasure = Treasures(16 * 5 + 3, 16 * 5 + 3, 3);
+	this->treasure = Treasures(Point(16 * 5 + 3, 16 * 5 + 3), 3);
 
 	const int numberOfTypeOfUselessObjs = NUMBER_OF_TYPE_OF_USELESS_OBJS;
 	int numberOfUselessObjs[numberOfTypeOfUselessObjs + 1];
@@ -362,15 +367,15 @@ void Game::UpdateGame()
 			case 1:
 			{
 				this->scene.IncreaseSecondValueOfPoint(-sceneHeight);
-				this->camera.SetPoint(tileSize * 49, tileSize);
-				this->yumetaro.SetPoint(tileSize * 57, 9 * tileSize - 4);
+				this->camera.SetPoint(Point(tileSize * 49, tileSize));
+				this->yumetaro.SetPoint(Point(tileSize * 57, 9 * tileSize - 4));
 				break;
 			}
 			case 2:
 			{
 				this->scene.IncreaseSecondValueOfPoint(sceneHeight);
-				this->camera.SetPoint(tileSize * 49, tileSize + sceneHeight);
-				this->yumetaro.SetPoint(tileSize * 56, sceneHeight + 6 * tileSize - 4);
+				this->camera.SetPoint(Point(tileSize * 49, tileSize + sceneHeight));
+				this->yumetaro.SetPoint(Point(tileSize * 56, sceneHeight + 6 * tileSize - 4));
 				break;
 			}
 			case 3:
@@ -378,16 +383,16 @@ void Game::UpdateGame()
 				this->scene.IncreaseFirstValueOfPoint(tileSize * 32);
 				this->scene.IncreaseSecondValueOfPoint(sceneHeight);
 				this->scene.SetFirstValueOfDimension(tileSize * 32);
-				this->camera.SetPoint(tileSize * 49, sceneHeight * 2 + tileSize);
-				this->yumetaro.SetPoint(tileSize * 57, sceneHeight * 2 + tileSize * 8 - 4);
+				this->camera.SetPoint(Point(tileSize * 49, sceneHeight * 2 + tileSize));
+				this->yumetaro.SetPoint(Point(tileSize * 57, sceneHeight * 2 + tileSize * 8 - 4));
 				break;
 			}
 			case 4:
 			{
 				this->scene.IncreaseSecondValueOfPoint(sceneHeight);
 				this->scene.SetFirstValueOfDimension(tileSize * 49);
-				this->camera.SetPoint(tileSize * 33, sceneHeight * 3 + tileSize);
-				this->yumetaro.SetPoint(tileSize * 37, sceneHeight * 3 + tileSize * 10 - 4);
+				this->camera.SetPoint(Point(tileSize * 33, sceneHeight * 3 + tileSize));
+				this->yumetaro.SetPoint(Point(tileSize * 37, sceneHeight * 3 + tileSize * 10 - 4));
 				break;
 			}
 			case 5:
@@ -423,17 +428,17 @@ void Game::UpdateGame()
 			}
 			case 9:
 			{
-				this->scene.IncreaseValueOfPoint(-tileSize * 32, -sceneHeight);
+				this->scene.IncreaseValueOfPoint(Pair(-tileSize * 32, -sceneHeight));
 				this->camera.IncreaseSecondValueOfPoint(-sceneHeight);
-				this->yumetaro.IncreaseValueOfPoint(tileSize * 4, -sceneHeight);
+				this->yumetaro.IncreaseValueOfPoint(Pair(tileSize * 4, -sceneHeight));
 				this->scene.SetFirstValueOfDimension(tileSize * 48);
 				break;
 			}
 			case 10:
 			{
 				this->scene.IncreaseFirstValueOfPoint(-tileSize * 16);
-				this->camera.SetPoint(tileSize * 65, tileSize);
-				this->yumetaro.SetPoint(tileSize * 70, tileSize * 8 - 4);
+				this->camera.SetPoint(Point(tileSize * 65, tileSize));
+				this->yumetaro.SetPoint(Point(tileSize * 70, tileSize * 8 - 4));
 				this->scene.SetFirstValueOfDimension(tileSize * 16);
 				break;
 			}
@@ -443,16 +448,16 @@ void Game::UpdateGame()
 	// Di chuyển bằng bàn phím
 	if (KEY_DOWN(VK_LEFT))
 	{
-		this->yumetaro.SetVelocity(-velocity, 0);
-		this->yumetaro.Move(SCENE_MAX_WIDTH, SCREEN_HEIGHT);
+		this->yumetaro.SetVelocity(Velocity(-velocity, 0));
+		this->yumetaro.Move(Dimension(SCENE_MAX_WIDTH, SCREEN_HEIGHT));
 		this->camera.Update(this->yumetaro, this->scene, tileSize);
 		this->yumetaro.Animate();
 	}
 
 	if (KEY_DOWN(VK_RIGHT))
 	{
-		this->yumetaro.SetVelocity(velocity, 0);
-		this->yumetaro.Move(SCENE_MAX_WIDTH, SCREEN_HEIGHT);
+		this->yumetaro.SetVelocity(Velocity(velocity, 0));
+		this->yumetaro.Move(Dimension(SCENE_MAX_WIDTH, SCREEN_HEIGHT));
 		this->yumetaro.Animate();
 		this->camera.Update(this->yumetaro, this->scene, tileSize);
 	}
@@ -462,8 +467,8 @@ void Game::UpdateGame()
 		if (camera.GetPoint().GetFirstValue() == SCENE_MIN_WIDTH ||
 			camera.GetPoint().GetFirstValue() == SCENE_MAX_WIDTH)
 		{
-			this->yumetaro.SetVelocity(0, -velocity);
-			this->yumetaro.Move(SCENE_MAX_WIDTH, SCREEN_HEIGHT);
+			this->yumetaro.SetVelocity(Velocity(0, -velocity));
+			this->yumetaro.Move(Dimension(SCENE_MAX_WIDTH, SCREEN_HEIGHT));
 		}
 
 		this->yumetaro.Animate();
@@ -475,8 +480,8 @@ void Game::UpdateGame()
 		if (camera.GetPoint().GetFirstValue() == SCENE_MIN_WIDTH ||
 			camera.GetPoint().GetFirstValue() == SCENE_MAX_WIDTH)
 		{
-			this->yumetaro.SetVelocity(0, velocity);
-			this->yumetaro.Move(SCENE_MAX_WIDTH, SCREEN_HEIGHT);
+			this->yumetaro.SetVelocity(Velocity(0, velocity));
+			this->yumetaro.Move(Dimension(SCENE_MAX_WIDTH, SCREEN_HEIGHT));
 		}
 
 		this->yumetaro.Animate();

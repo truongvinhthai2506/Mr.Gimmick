@@ -11,7 +11,7 @@ SceneIntro::~SceneIntro()
 SceneIntro::SceneIntro(HWND window)
 {
 	this->window = window;
-	bool flag = this->directX.InitDirectX(this->window, SCREEN_WIDTH, SCREEN_HEIGHT, FULLSCREEN);
+	bool flag = this->directX.InitDirectX(this->window, Dimension(SCREEN_WIDTH, SCREEN_HEIGHT), FULLSCREEN);
 
 	D3DXIMAGE_INFO info;
 	HRESULT result = D3DXGetImageInfoFromFile(L"../../Resource/intro.png", &info);

@@ -14,8 +14,7 @@ protected:
     LPDIRECT3DTEXTURE9 texture;
 public:
     AnimatedTile();
-    AnimatedTile(float x, float y, float spriteWidth, float spriteHeight, LPCWSTR fileSpriteName,
-        int lastSpriteFrame, int animationDelay, int currentSpriteFrame = 0, int animationCount = 0);
+    AnimatedTile(Point point, Sprite* sprite);
     AnimatedTile(const AnimatedTile& animatedTile);
     ~AnimatedTile();
     void Draw(GraphicDevice graphicDevice, Point cameraPoint, int indexOfRow = 0, bool isRotate = 0,
