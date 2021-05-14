@@ -1,1 +1,1 @@
-# Mr.Gimmick-NMPTG-Team
+# Mr.Gimmick
