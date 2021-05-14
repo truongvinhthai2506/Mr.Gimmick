@@ -1,6 +1,6 @@
 ﻿#include "GraphicDevice.h"
 
-bool GraphicDevice::InitDevice(LPDIRECT3D9 direct3D, HWND window, int width, int height, 
+bool GraphicDevice::InitDevice(LPDIRECT3D9 direct3D, HWND window, Dimension screenDimension, 
 	bool isFullscreen)
 {
 	D3DPRESENT_PARAMETERS deviceParameter;		//Biến chứa các tham số của thiết bị
@@ -11,8 +11,8 @@ bool GraphicDevice::InitDevice(LPDIRECT3D9 direct3D, HWND window, int width, int
 	deviceParameter.SwapEffect = D3DSWAPEFFECT_COPY;
 	deviceParameter.BackBufferFormat = D3DFMT_X8R8G8B8;
 	deviceParameter.BackBufferCount = 1;
-	deviceParameter.BackBufferWidth = width;
-	deviceParameter.BackBufferHeight = height;
+	deviceParameter.BackBufferWidth = screenDimension.GetFirstValue();
+	deviceParameter.BackBufferHeight = screenDimension.GetSecondValue();
 	deviceParameter.hDeviceWindow = window;
 
 	//Khởi tạo đối tượng device từ card màn hình mặc định (D3DADAPTER_DEFAULT), quy định vẽ bằng phần 

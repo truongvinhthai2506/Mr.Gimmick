@@ -6,5 +6,5 @@ class UsefulObj : public AnimatedAndImmovableObj
 {
 public:
     UsefulObj();
-    UsefulObj(float x, float y, int numberOfAnimatedTiles, int gameObjID);
+    UsefulObj(Point point, int numberOfAnimatedTiles, int gameObjID);
 };

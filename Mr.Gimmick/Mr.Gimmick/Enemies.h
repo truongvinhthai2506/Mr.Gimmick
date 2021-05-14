@@ -12,8 +12,8 @@ class Enemies : public UnplayableObj
 {
 public:
     Enemies();
-    Enemies(float x, float y, int gameObjID, float vX = 2, float vY = 0, int numberOfAnimatedTiles = 1,
-        float width = 19.4, float height = 19.4, LPCWSTR fileSpriteName = SPRITE_ENEMIES_PATH);
+    Enemies(Point point, int gameObjID, Velocity velocity = Velocity(2, 0), int numberOfAnimatedTiles = 1,
+        Dimension dimension = Dimension(19.4, 19.4), LPCWSTR fileSpriteName = SPRITE_ENEMIES_PATH);
     Enemies& operator = (const Enemies& enemies);
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic);
 };

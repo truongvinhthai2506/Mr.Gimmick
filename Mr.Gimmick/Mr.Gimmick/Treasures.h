@@ -12,7 +12,7 @@ class Treasures : public UsefulObj
 {
 public:
     Treasures();
-    Treasures(float x, float y, int gameObjID, int currentFrame = 1, float width = 23, float height = 50,
+    Treasures(Point point, int gameObjID, int currentFrame = 1, Dimension dimension = Dimension(23, 50),
         int numberOfAnimatedTiles = 1, LPCWSTR fileSpriteName = SPRITE_TREASURES_PATH);
     Treasures& operator = (const Treasures& itemsAndHUD);
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic);

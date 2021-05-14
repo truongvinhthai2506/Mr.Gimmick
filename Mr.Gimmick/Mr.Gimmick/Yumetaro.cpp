@@ -10,11 +10,12 @@ Yumetaro::Yumetaro()
 
 }
 
-Yumetaro::Yumetaro(float x, float y, float vX, float vY, int numberOfAnimatedTiles, float width, 
-	float height, LPCWSTR fileSpriteName, int gameObjID) : PlayableObj(x, y, numberOfAnimatedTiles, vX, 
-		vY, gameObjID)
+Yumetaro::Yumetaro(Point point, Velocity velocity, int numberOfAnimatedTiles, Dimension dimension, 
+	LPCWSTR fileSpriteName, int gameObjID) : PlayableObj(point, numberOfAnimatedTiles, velocity, 
+	gameObjID)
 {
-	this->animatedTiles[0] = new AnimatedTile(x, y, width, height, fileSpriteName, 6, 0, 1);
+	Sprite* sprite = new Sprite(dimension, fileSpriteName, 6, 0, 1);
+	this->animatedTiles[0] = new AnimatedTile(point, sprite);
 	SetDimension();
 }
 
@@ -36,13 +37,13 @@ void Yumetaro::Animate()
 	this->animatedTiles[0]->Animate();
 }
 
-void Yumetaro::Move(int screenWidth, int screenHeight)
+void Yumetaro::Move(Dimension dimension)
 {
 	Dimension spriteDimension = this->animatedTiles[0]->GetSprite()->GetDimension();
 	float lim[2];
 	float scale = SCALE;
-	lim[0] = screenWidth - spriteDimension.GetFirstValue() * scale;
-	lim[1] = screenHeight - spriteDimension.GetSecondValue() * scale;
+	lim[0] = dimension.GetFirstValue() - spriteDimension.GetFirstValue() * scale;
+	lim[1] = dimension.GetSecondValue() - spriteDimension.GetSecondValue() * scale;
 
 	float x = this->point.GetFirstValue();
 	float y = this->point.GetSecondValue();
@@ -58,7 +59,7 @@ void Yumetaro::Move(int screenWidth, int screenHeight)
 	//if ((flags[0] && flags[1] && flags[2] && flags[3]) || (!flags[0] && vX <= 0) || 
 	//	(!flags[1] && vY >= 0) || (!flags[2] && vY <= 0) || (!flags[3] && vY >= 0))
 	{
-		AnimatedAndMovableObj::Move(screenWidth, screenHeight);
+		AnimatedAndMovableObj::Move(dimension);
 	}
 
 	if (!flags[0])

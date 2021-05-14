@@ -5,7 +5,7 @@ Tile::Tile()
 
 }
 
-Tile::Tile(float x, float y) : TwoDimensionObj(x, y)
+Tile::Tile(Point point) : TwoDimensionObj(point)
 {
 
 }

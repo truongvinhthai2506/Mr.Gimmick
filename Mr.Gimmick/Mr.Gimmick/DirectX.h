@@ -12,7 +12,7 @@ private:
 	DirectInput directInput;
 	//DirectSound directSound;
 public:
-	bool InitDirectX(HWND window, int screenWidth, int screenHeight, bool isFullscreen);
+	bool InitDirectX(HWND window, Dimension screenDimension, bool isFullscreen);
 	void ReleaseDirectX();
 	DirectXGraphic GetDirectXGraphic();
 	DirectInput GetDirectInput();

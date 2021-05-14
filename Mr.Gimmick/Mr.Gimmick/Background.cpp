@@ -110,7 +110,7 @@ void Background::LoadBackground(DirectXGraphic directXGraphic)
 		{
 			value = matrix[i][j];
 			this->tiles[i][j] = tiles[value]->Clone();
-			this->tiles[i][j]->SetPoint((float)j * tileSize, (float)i * tileSize);
+			this->tiles[i][j]->SetPoint(Point((float)j * tileSize, (float)i * tileSize));
 		}
 	}
 }
@@ -125,7 +125,7 @@ void Background::ChangeTile(int i, int j, int value, int firstTile, int lastTile
 			firstTile, lastTile, direction, i, j, tileSize);
 		this->tiles[i][j] = this->tileset.GetElement(indexOfNewImageOfTile)->Clone();
 		((AnimatedTile*)this->tiles[i][j])->SetNumberOfDrawings(numberOfDrawings);
-		this->tiles[i][j]->SetPoint((float)j * tileSize, (float)i * tileSize);
+		this->tiles[i][j]->SetPoint(Point((float)j * tileSize, (float)i * tileSize));
 	}
 }
 
@@ -182,18 +182,18 @@ void SetPointAndPushBack(list<AnimatedTile*>& animatedTiles, Tile* tile, Point& 
 
 void Load(list<AnimatedTile*>& animatedTiles, UselessObj*& uselessObj, int key, Point& point, int count)
 {
-	int size = animatedTiles.size(), x = point.GetFirstValue(), y = point.GetSecondValue();
+	int size = animatedTiles.size();
 
 	switch (key)
 	{
 		case 0:
 		{
-			uselessObj = new ScrollBar(x, y, size, 20 + count);
+			uselessObj = new ScrollBar(point, size, 20 + count);
 			break;
 		}
 		case 1:
 		{
-			uselessObj = new Waterfall(x, y, size, 24);
+			uselessObj = new Waterfall(point, size, 24);
 			break;
 		}
 	}
@@ -204,7 +204,7 @@ void Load(list<AnimatedTile*>& animatedTiles, UselessObj*& uselessObj, int key, 
 		animatedTiles.pop_front();
 	}
 
-	point.SetValue(0, 0);
+	point.SetValue(Point());
 	uselessObj->SetDimension();
 }
 

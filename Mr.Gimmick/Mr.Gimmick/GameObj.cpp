@@ -5,7 +5,7 @@ GameObj::GameObj()
     this->gameObjID = 0;
 }
 
-GameObj::GameObj(float x, float y, int gameObjID) : TwoDimensionObj(x, y)
+GameObj::GameObj(Point point, int gameObjID) : TwoDimensionObj(point)
 {
     this->gameObjID = gameObjID;
 }

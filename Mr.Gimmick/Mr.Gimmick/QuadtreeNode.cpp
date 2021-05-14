@@ -7,8 +7,8 @@ QuadtreeNode::QuadtreeNode()
 	this->nodeID = 0;
 }
 
-QuadtreeNode::QuadtreeNode(int nodeID, float x, float y, Dimension dimension, list<TreeObj> treeObjs) : 
-	TwoDimensionObj(x, y)
+QuadtreeNode::QuadtreeNode(int nodeID, Point point, Dimension dimension, list<TreeObj> treeObjs) : 
+	TwoDimensionObj(point)
 {
 	this->topLeftChildNode = this->topRightChildNode = this->bottomLeftChildNode =
 		this->bottomRightChildNode = NULL;
@@ -51,10 +51,11 @@ void QuadtreeNode::Divide()
 	float x = this->point.GetFirstValue(), y = this->point.GetSecondValue();
 	float newLength = this->dimension.GetFirstValue() / 2;
 	Dimension newDimension(newLength, newLength);
-	this->topLeftChildNode = new QuadtreeNode(tmp + 1, x, y, newDimension);
-	this->topRightChildNode = new QuadtreeNode(tmp + 2, x + newLength, y, newDimension);
-	this->bottomLeftChildNode = new QuadtreeNode(tmp + 3, x, y + newLength, newDimension);
-	this->bottomRightChildNode = new QuadtreeNode(tmp + 4, x + newLength, y + newLength, newDimension);
+	this->topLeftChildNode = new QuadtreeNode(tmp + 1, this->point, newDimension);
+	this->topRightChildNode = new QuadtreeNode(tmp + 2, Point(x + newLength, y), newDimension);
+	this->bottomLeftChildNode = new QuadtreeNode(tmp + 3, Point(x, y + newLength), newDimension);
+	this->bottomRightChildNode = new QuadtreeNode(tmp + 4, Point(x + newLength, y + newLength), 
+		newDimension);
 }
 
 QuadtreeNode* QuadtreeNode::GetChild(int key)

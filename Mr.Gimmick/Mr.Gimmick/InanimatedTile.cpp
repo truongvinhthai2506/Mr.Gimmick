@@ -5,11 +5,10 @@ InanimatedTile::InanimatedTile()
 
 }
 
-InanimatedTile::InanimatedTile(float x, float y, float imageWidth, float imageHeight, 
-	LPCWSTR fileImageName) : Tile(x, y)
+InanimatedTile::InanimatedTile(Point point, Image* image) : Tile(point)
 {
-	this->dimension = Dimension(imageWidth, imageHeight);
-	this->image = new Image(imageWidth, imageHeight, fileImageName);
+	this->dimension = image->GetDimension();
+	this->image = image;
 }
 
 InanimatedTile::~InanimatedTile()

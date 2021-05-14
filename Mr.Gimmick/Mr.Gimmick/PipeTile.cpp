@@ -5,8 +5,7 @@ PipeTile::PipeTile()
 
 }
 
-PipeTile::PipeTile(float x, float y, float imageWidth, float imageHeight, LPCWSTR fileImageName) 
-	: InanimatedTile(x, y, imageWidth, imageHeight, fileImageName)
+PipeTile::PipeTile(Point point, Image* image) : InanimatedTile(point, image)
 {
 
 }

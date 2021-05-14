@@ -19,6 +19,7 @@ Tileset::Tileset(int numberOfTiles, LPCWSTR nameOfLevel, D3DCOLOR backgroundColo
 	string index;
 	int tileSize = TILE_SIZE;
 	float scale = SCALE;
+	Image* image;
 
 	for (int i = 0; i < numberOfTiles; i++)
 	{
@@ -28,16 +29,18 @@ Tileset::Tileset(int numberOfTiles, LPCWSTR nameOfLevel, D3DCOLOR backgroundColo
 
 		if (CheckTile(i, 2, 140, 4, 14))
 		{
-			this->tiles[i] = new ScrollBarTile(i * tileSize, 0, tileSize, tileSize, filename, 1, 0, 1);
+			image = new Sprite(Dimension(tileSize, tileSize), filename, 1, 0, 1);
+			this->tiles[i] = new ScrollBarTile(Point(i * tileSize, 0), (Sprite*)image);
 		}
 		else if (CheckTile(i, 8, 94, 4, 14) || CheckTile(i, 4, 205, 4, 14))
 		{
-			this->tiles[i] = new WaterTile(i * tileSize, 0, tileSize, tileSize, filename, 1, 0, 1);
+			image = new Sprite(Dimension(tileSize, tileSize), filename, 1, 0, 1);
+			this->tiles[i] = new WaterTile(Point(i * tileSize, 0), (Sprite*)image);
 		}
 		else
 		{
-			this->tiles[i] = new InanimatedTile(i * tileSize * scale, 0, tileSize * scale,
-				tileSize * scale, filename);
+			image = new Image(Dimension(tileSize * scale, tileSize * scale), filename);
+			this->tiles[i] = new InanimatedTile(Point(i * tileSize * scale, 0), image);
 		}
 	}
 

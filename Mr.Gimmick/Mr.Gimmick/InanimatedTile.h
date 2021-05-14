@@ -12,7 +12,7 @@ protected:
 	LPDIRECT3DSURFACE9 surface;
 public:
 	InanimatedTile();
-	InanimatedTile(float x, float y, float imageWidth, float imageHeight, LPCWSTR fileImageName);
+	InanimatedTile(Point point, Image* image);
 	~InanimatedTile();
 	void Draw(GraphicDevice graphicDevice, Point cameraPoint, int indexOfRow = 0, bool isRotate = 0,
 		LPDIRECT3DSURFACE9 backbuffer = NULL);

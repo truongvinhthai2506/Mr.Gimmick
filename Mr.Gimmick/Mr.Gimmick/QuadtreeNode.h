@@ -15,8 +15,7 @@ private:
 	list<TreeObj> treeObjs;
 public:
 	QuadtreeNode();
-	QuadtreeNode(int nodeID, float x, float y, Dimension dimension, 
-		list<TreeObj> treeObjs = list<TreeObj>());
+	QuadtreeNode(int nodeID, Point point, Dimension dimension, list<TreeObj> treeObjs = list<TreeObj>());
 	bool IsDivided(float length);
 	void Divide();
 	QuadtreeNode* GetChild(int key);

@@ -1,9 +1,9 @@
 #include "Pair.h"
 
-void Pair::IncreaseValue(int addtionalFirstValue, int additionalSecondValue)
+void Pair::IncreaseValue(Pair additionalValue)
 {
-	IncreaseFirstValue(addtionalFirstValue);
-	IncreaseSecondValue(additionalSecondValue);
+	IncreaseFirstValue(additionalValue.GetFirstValue());
+	IncreaseSecondValue(additionalValue.GetSecondValue());
 }
 
 void Pair::IncreaseSecondValue(int additionalSecondValue)
@@ -47,8 +47,8 @@ void Pair::SetSecondValue(float secondValue)
 	this->secondValue = secondValue;
 }
 
-void Pair::SetValue(float firstValue, float secondValue)
+void Pair::SetValue(Pair pair)
 {
-	this->firstValue = firstValue;
-	this->secondValue = secondValue;
+	this->firstValue = pair.firstValue;
+	this->secondValue = pair.secondValue;
 }

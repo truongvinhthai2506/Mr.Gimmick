@@ -9,8 +9,8 @@ private:
 	SpriteHandler spriteHandler;
 public:
 	Sprite();
-	Sprite(float width, float height, LPCWSTR filename, int lastFrame, int animationDelay,
-		int currentFrame, int animationCount);
+	Sprite(Dimension dimension, LPCWSTR filename, int lastFrame, int animationDelay,
+		int currentFrame = 0, int animationCount = 0);
 	SpriteHandler GetSpriteHandler();
 	void Animate();
 	Sprite* Clone();
