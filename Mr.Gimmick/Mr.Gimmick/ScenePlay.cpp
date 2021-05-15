@@ -10,7 +10,7 @@ ScenePlay::ScenePlay(HWND window)
 	//this->yumetaro = new Yumetaro(YUMETARO_START_X, YUMETARO_START_Y, YUMETARO_VELOCITY_X,
 	//	YUMETARO_VELOCITY_Y, 1, YUMETARO_WIDTH, YUMETARO_HEIGHT, SPRITE_YUMETARO_PATH, 1);
 
-	this->yumetaro->Load(YUMETARO_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
+	//this->yumetaro->Load(YUMETARO_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
 	this->background = Background(NUMBER_OF_ROWS_LEVEL_1, NUMBER_OF_COLUMNS_LEVEL_1,
 		FILE_TILEMAP_PATH_LEVEL_1, NUMBER_OF_TILES_LEVEL_1, L"Level_1", BACKGROUND_COLOR_LEVEL_1);
 

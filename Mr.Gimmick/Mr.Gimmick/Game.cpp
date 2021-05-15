@@ -4,12 +4,7 @@ Game::Game()
 {
 	this->uselessObjs = NULL;
 	this->window = NULL;
-	this->enemies = NULL;
-	this->hazardsAndInteractables = NULL;
-	this->itemsAndHUD = NULL;
-	this->passiveCreatures = NULL;
-	this->numberOfUselessObjs = this->numberOfEnemies = this->numberOfHazardsAndInteractables =
-		this->numberOfItemsAndHUD = this->numberOfPassiveCreatures = this->indexOfScene = 0;
+	this->numberOfUselessObjs = this->indexOfScene = 0;
 }
 
 Game::Game(const Game& game)
@@ -18,12 +13,11 @@ Game::Game(const Game& game)
 	this->indexOfScene = game.indexOfScene;
 	this->camera = game.camera;
 	this->quadtree = game.quadtree;
+	this->yumetaro = game.yumetaro;
 	this->background = game.background;
 	this->directX = game.directX;
 	this->window = game.window;
-	this->yumetaro = game.yumetaro;
 	this->boss = game.boss;
-	this->treasure = game.treasure;
 	this->gameObjs = game.gameObjs;
 
 	this->numberOfUselessObjs = game.numberOfUselessObjs;
@@ -33,94 +27,53 @@ Game::Game(const Game& game)
 	{
 		this->uselessObjs[i] = game.uselessObjs[i]->Clone();
 	}
-
-	this->numberOfEnemies = game.numberOfEnemies;
-	this->enemies = new Enemies[game.numberOfEnemies];
-
-	for (int i = 0; i < game.numberOfEnemies; i++)
-	{
-		this->enemies[i] = game.enemies[i];
-	}
-
-	this->numberOfHazardsAndInteractables = game.numberOfHazardsAndInteractables;
-	this->hazardsAndInteractables = new HazardsAndInteractables[game.numberOfHazardsAndInteractables];
-
-	for (int i = 0; i < game.numberOfHazardsAndInteractables; i++)
-	{
-		this->hazardsAndInteractables[i] = game.hazardsAndInteractables[i];
-	}
-
-	this->numberOfItemsAndHUD = game.numberOfItemsAndHUD;
-	this->itemsAndHUD = new ItemsAndHUD[game.numberOfItemsAndHUD];
-
-	for (int i = 0; i < game.numberOfItemsAndHUD; i++)
-	{
-		this->itemsAndHUD[i] = game.itemsAndHUD[i];
-	}
-
-	this->numberOfPassiveCreatures = game.numberOfPassiveCreatures;
-	this->passiveCreatures = new PassiveCreatures[game.numberOfPassiveCreatures];
-
-	for (int i = 0; i < game.numberOfPassiveCreatures; i++)
-	{
-		this->passiveCreatures[i] = game.passiveCreatures[i];
-	}
 }
 
-Game::~Game()
+bool Game::InitGame(HWND window)
 {
-	delete[] this->uselessObjs;
+	Dimension screenDimension = SCREEN_DIMENSION;
 
-	delete[] this->enemies;
+	this->camera = Camera(Point(TILE_SIZE, TILE_SIZE * 13), Dimension(SCREEN_WIDTH / SCALE,
+		SCREEN_HEIGHT / SCALE));
+	this->scene = TwoDimensionObj(Point(16, 16 * 13));
+	this->scene.SetDimension(Dimension(16 * 64, 16 * 13));
 
-	delete[] this->hazardsAndInteractables;
+	this->window = window;
+	bool flag = this->directX.InitDirectX(this->window, screenDimension, FULLSCREEN);
 
-	delete[] this->itemsAndHUD;
+	this->yumetaro = Yumetaro(1);
+	this->gameObjs[1] = &this->yumetaro;
+	this->boss = Bosses(Point(16 * 70 - 4, 16 * 6), 2);
+	this->gameObjs[3] = new Treasures(Point(16 * 5 + 3, 16 * 5 + 3), 3);
 
-	delete[] this->passiveCreatures;
-}
+	this->background = Background(NUMBER_OF_ROWS_LEVEL_ONE, NUMBER_OF_COLUMNS_LEVEL_ONE,
+		FILE_TILEMAP_PATH_LEVEL_ONE, NUMBER_OF_TILES_LEVEL_ONE, L"Level_1", BACKGROUND_COLOR_LEVEL_ONE);
 
-TreeObj* Game::InitTreeObjs()
-{
-	TreeObj* treeObjs = new TreeObj[NUMBER_OF_GAME_OBJS];
-	treeObjs[0] = TreeObj(&this->boss);
-	treeObjs[1] = TreeObj(&this->treasure);
-	int index = 2;
+	const int numberOfTypeOfUselessObjs = NUMBER_OF_TYPE_OF_USELESS_OBJS;
+	int numberOfUselessObjs[numberOfTypeOfUselessObjs + 1];
+	numberOfUselessObjs[0] = 0;
+	numberOfUselessObjs[1] = numberOfUselessObjs[0] + NUMBER_OF_SCROLLBARS;
+	numberOfUselessObjs[2] = numberOfUselessObjs[1] + NUMBER_OF_WATERFALLS;
 
-	for (int i = 0; i < this->numberOfEnemies; i++)
+	this->numberOfUselessObjs = numberOfUselessObjs[numberOfTypeOfUselessObjs];
+	this->uselessObjs = new UselessObj * [this->numberOfUselessObjs];
+
+	for (int i = 0; i < numberOfTypeOfUselessObjs; i++)
 	{
-		treeObjs[index + i] = TreeObj(&this->enemies[i]);
-	}
-	
-	index += this->numberOfEnemies;
-
-	for (int i = 0; i < this->numberOfUselessObjs; i++)
-	{
-		treeObjs[index + i] = TreeObj(this->uselessObjs[i]);
-	}
-
-	index += this->numberOfUselessObjs;
-
-	for (int i = 0; i < this->numberOfHazardsAndInteractables; i++)
-	{
-		treeObjs[index + i] = TreeObj(&this->hazardsAndInteractables[i]);
+		InitUselessObjs(i, numberOfUselessObjs);
 	}
 
-	index += this->numberOfHazardsAndInteractables;
+	InitEnemies();
+	InitHazardsAndInteractables();
+	InitItemsAndHUD();
+	InitPassiveCreatures();
 
-	for (int i = 0; i < this->numberOfPassiveCreatures; i++)
-	{
-		treeObjs[index + i] = TreeObj(&this->passiveCreatures[i]);
-	}
+	this->gameObjs.insert(pair<int, GameObj*>(this->boss.GetID(), &this->boss));
 
-	index += numberOfPassiveCreatures;
+	map<int, QuadtreeNode*> quadtreeNodes = this->quadtree.InitQuadtreeNodeFromFile(this->gameObjs);
+	this->quadtree.LinkQuadtreeNode(quadtreeNodes);
 
-	for (int i = 0; i < this->numberOfItemsAndHUD; i++)
-	{
-		treeObjs[index + i] = TreeObj(&this->itemsAndHUD[i]);
-	}
-
-	return treeObjs;
+	return flag;
 }
 
 void Game::InitUselessObjs(int key, int* numberOfUselessObjs)
@@ -148,79 +101,55 @@ void Game::InitUselessObjs(int key, int* numberOfUselessObjs)
 
 void Game::InitEnemies()
 {
-	this->numberOfEnemies = NUMBER_OF_ENEMIES;
-	this->enemies = new Enemies[this->numberOfEnemies];
-	this->enemies[0] = Enemies(Point(16 * 28, 16 * 22), 4);
-	this->enemies[1] = Enemies(Point(16 * 30, 16 * 22), 5);
-	this->enemies[2] = Enemies(Point(16 * 33, 16 * 21), 6);
-	this->enemies[3] = Enemies(Point(16 * 37, 16 * 22), 7);
-	this->enemies[4] = Enemies(Point(16 * 41, 16 * 21), 8);
-	this->enemies[5] = Enemies(Point(16 * 45, 16 * 22), 9);
-	this->enemies[6] = Enemies(Point(16 * 47, 16 * 22), 10);
-	this->enemies[7] = Enemies(Point(16 * 49, 16 * 22), 11);
-	this->enemies[8] = Enemies(Point(16 * 36, 16 * 31), 12);
-	this->enemies[9] = Enemies(Point(16 * 114, 16 * 28), 13);
-	this->enemies[10] = Enemies(Point(16 * 114, 16 * 19), 14);
-	this->enemies[11] = Enemies(Point(16 * 108, 16 * 7), 15);
-	this->enemies[12] = Enemies(Point(16 * 89, 16 * 10), 16);
-	this->enemies[13] = Enemies(Point(16 * 85, 16 * 10), 17);
-	this->enemies[14] = Enemies(Point(16 * 47, 16 * 40 - 3), 18, Velocity(2, 0), 1, Dimension(26, 19.4));
-	this->enemies[15] = Enemies(Point(16 * 117, 16 * 31 - 3), 19, Velocity(2, 0), 1, Dimension(26, 19.4));
-
-	for (int i = 0; i < this->numberOfEnemies; i++)
-	{
-		this->gameObjs.insert(pair<int, GameObj*>(this->enemies[i].GetID(), &this->enemies[i]));
-	}
+	this->gameObjs[4] = new Enemies(Point(16 * 28, 16 * 22), 4);
+	this->gameObjs[5] = new Enemies(Point(16 * 30, 16 * 22), 5);
+	this->gameObjs[6] = new Enemies(Point(16 * 33, 16 * 21), 6);
+	this->gameObjs[7] = new Enemies(Point(16 * 37, 16 * 22), 7);
+	this->gameObjs[8] = new Enemies(Point(16 * 41, 16 * 21), 8);
+	this->gameObjs[9] = new Enemies(Point(16 * 45, 16 * 22), 9);
+	this->gameObjs[10] = new Enemies(Point(16 * 47, 16 * 22), 10);
+	this->gameObjs[11] = new Enemies(Point(16 * 49, 16 * 22), 11);
+	this->gameObjs[12] = new Enemies(Point(16 * 36, 16 * 31), 12);
+	this->gameObjs[13] = new Enemies(Point(16 * 114, 16 * 28), 13);
+	this->gameObjs[14] = new Enemies(Point(16 * 114, 16 * 19), 14);
+	this->gameObjs[15] = new Enemies(Point(16 * 108, 16 * 7), 15);
+	this->gameObjs[16] = new Enemies(Point(16 * 89, 16 * 10), 16);
+	this->gameObjs[17] = new Enemies(Point(16 * 85, 16 * 10), 17);
+	this->gameObjs[18] = new Enemies(Point(16 * 47, 16 * 40 - 3), 18, Dimension(26, 19.4));
+	this->gameObjs[19] = new Enemies(Point(16 * 117, 16 * 31 - 3), 19, Dimension(26, 19.4));
 }
 
 void Game::InitHazardsAndInteractables()
 {
-	this->numberOfHazardsAndInteractables = NUMBER_OF_HAZARDS_AND_INTERACTABLES;
-	this->hazardsAndInteractables = new HazardsAndInteractables[this->numberOfHazardsAndInteractables];
-
 	for (int i = 0; i < 2; i++)
 	{
-		this->hazardsAndInteractables[i] = HazardsAndInteractables(Point(16 * (55 - i * 3), 16 * 27), 
-			25 + i);
+		this->gameObjs[25 + i] = new HazardsAndInteractables(Point(16 * (55 - i * 3), 16 * 27), 25 + i);
 	}
 
 	for (int i = 2; i < 6; i++)
 	{
-		this->hazardsAndInteractables[i] = HazardsAndInteractables(Point(16 * (53 + (i - 2) * 2), 
-			16 * 39), 25 + i);
+		this->gameObjs[25 + i] = new HazardsAndInteractables(Point(16 * (53 + (i - 2) * 2), 16 * 39), 
+			25 + i);
 	}
 
 	for (int i = 6; i < 8; i++)
 	{
-		this->hazardsAndInteractables[i] = HazardsAndInteractables(Point(16 * (64 + (i - 6) * 2), 
-			16 * 39), 25 + i);
+		this->gameObjs[25 + i] = new HazardsAndInteractables(Point(16 * (64 + (i - 6) * 2), 16 * 39), 
+			25 + i);
 	}
 
-	this->hazardsAndInteractables[8] = HazardsAndInteractables(Point(16 * 36, 16 * 28 - 2), 33, 6);
-	this->hazardsAndInteractables[9] = HazardsAndInteractables(Point(16 * 74, 16 * 42 - 2), 34, 6);
-	this->hazardsAndInteractables[10] = HazardsAndInteractables(Point(16 * 115 + 8, 16 * 41 + 1), 35 , 
-		1, Dimension(53, 77));
-
-	for (int i = 0; i < this->numberOfHazardsAndInteractables; i++)
-	{
-		this->gameObjs.insert(pair<int, GameObj*>(this->hazardsAndInteractables[i].GetID(), 
-			&this->hazardsAndInteractables[i]));
-	}
+	this->gameObjs[33] = new HazardsAndInteractables(Point(16 * 36, 16 * 28 - 2), 33, 6);
+	this->gameObjs[34] = new HazardsAndInteractables(Point(16 * 74, 16 * 42 - 2), 34, 6);
+	this->gameObjs[35] = new HazardsAndInteractables(Point(16 * 115 + 8, 16 * 41 + 1), 35, 1, 
+		Dimension(53, 77));
 }
 
 void Game::InitItemsAndHUD()
 {
-	this->numberOfItemsAndHUD = NUMBER_OF_ITEMS_AND_HUD;
-	this->itemsAndHUD = new ItemsAndHUD[this->numberOfItemsAndHUD];
-	this->itemsAndHUD[0] = ItemsAndHUD(Point(16 * 27, 16 * 19), 42, 2);
-	this->itemsAndHUD[1] = ItemsAndHUD(Point(16 * 34, 16 * 43), 43, 3);
-	this->itemsAndHUD[2] = ItemsAndHUD(Point(16 * 126, 16 * 22), 44, 2);
-	this->itemsAndHUD[3] = ItemsAndHUD(Point(16 * 127 - 6, 16 * 4 - 3), 45, 4);
-
-	for (int i = 0; i < this->numberOfItemsAndHUD; i++)
-	{
-		this->gameObjs.insert(pair<int, GameObj*>(this->itemsAndHUD[i].GetID(), &this->itemsAndHUD[i]));
-	}
+	this->gameObjs[42] = new ItemsAndHUD(Point(16 * 27, 16 * 19), 42, 2);
+	this->gameObjs[43] = new ItemsAndHUD(Point(16 * 34, 16 * 43), 43, 3);
+	this->gameObjs[44] = new ItemsAndHUD(Point(16 * 126, 16 * 22), 44, 2);
+	this->gameObjs[45] = new ItemsAndHUD(Point(16 * 127 - 6, 16 * 4 - 3), 45, 4);
 }
 
 void Game::InitPassiveCreatures()
@@ -241,99 +170,83 @@ void Game::InitPassiveCreatures()
 	}
 }
 
-// Khởi tạo game
-bool Game::InitGame(HWND window)
+TreeObj* Game::InitTreeObjs()
 {
-	Dimension screenDimension = SCREEN_DIMENSION;
+	TreeObj* treeObjs = new TreeObj[NUMBER_OF_GAME_OBJS];
+	treeObjs[0] = TreeObj(&this->boss);
+	treeObjs[1] = TreeObj(this->gameObjs[3]);
+	int index = 2;
 
-	this->camera = Camera(Point(TILE_SIZE, TILE_SIZE * 13), Dimension(SCREEN_WIDTH / SCALE, 
-		SCREEN_HEIGHT / SCALE));
-	this->scene = TwoDimensionObj(Point(16, 16 * 13));
-	this->scene.SetDimension(Dimension(16 * 64, 16 * 13));
-
-	this->window = window;
-	bool flag = this->directX.InitDirectX(this->window, screenDimension, FULLSCREEN);
-
-	this->yumetaro = Yumetaro(Point(YUMETARO_START_X, YUMETARO_START_Y), Velocity(YUMETARO_VELOCITY_X,
-		YUMETARO_VELOCITY_Y), 1, Dimension(YUMETARO_WIDTH, YUMETARO_HEIGHT), SPRITE_YUMETARO_PATH, 1);
-
-	this->background = Background(NUMBER_OF_ROWS_LEVEL_ONE, NUMBER_OF_COLUMNS_LEVEL_ONE,
-		FILE_TILEMAP_PATH_LEVEL_ONE, NUMBER_OF_TILES_LEVEL_ONE, L"Level_1", BACKGROUND_COLOR_LEVEL_ONE);
-
-	this->boss = Bosses(Point(16 * 70 - 4, 16 * 6), 2);
-
-	this->treasure = Treasures(Point(16 * 5 + 3, 16 * 5 + 3), 3);
-
-	const int numberOfTypeOfUselessObjs = NUMBER_OF_TYPE_OF_USELESS_OBJS;
-	int numberOfUselessObjs[numberOfTypeOfUselessObjs + 1];
-	numberOfUselessObjs[0] = 0;
-	numberOfUselessObjs[1] = numberOfUselessObjs[0] + NUMBER_OF_SCROLLBARS;
-	numberOfUselessObjs[2] = numberOfUselessObjs[1] + NUMBER_OF_WATERFALLS;
-
-	this->numberOfUselessObjs = numberOfUselessObjs[numberOfTypeOfUselessObjs];
-	this->uselessObjs = new UselessObj*[this->numberOfUselessObjs];
-	
-	for (int i = 0; i < numberOfTypeOfUselessObjs; i++)
+	for (int i = 0; i < NUMBER_OF_ENEMIES; i++)
 	{
-		InitUselessObjs(i, numberOfUselessObjs);
+		treeObjs[index + i] = TreeObj(this->gameObjs[i + 4]);
 	}
 
-	InitEnemies();
-	InitHazardsAndInteractables();
-	InitItemsAndHUD();
-	InitPassiveCreatures();
+	index += NUMBER_OF_ENEMIES;
 
-	this->gameObjs.insert(pair<int, GameObj*>(this->yumetaro.GetID(), &this->yumetaro));
-	this->gameObjs.insert(pair<int, GameObj*>(this->boss.GetID(), &this->boss));
-	this->gameObjs.insert(pair<int, GameObj*>(this->treasure.GetID(), &this->treasure));
+	for (int i = 0; i < this->numberOfUselessObjs; i++)
+	{
+		treeObjs[index + i] = TreeObj(this->uselessObjs[i]);
+	}
 
-	map<int, QuadtreeNode*> quadtreeNodes = this->quadtree.InitQuadtreeNodeFromFile(this->gameObjs);
-	this->quadtree.LinkQuadtreeNode(quadtreeNodes);
+	index += this->numberOfUselessObjs;
 
-	return flag;
+	for (int i = 0; i < NUMBER_OF_HAZARDS_AND_INTERACTABLES; i++)
+	{
+		treeObjs[index + i] = TreeObj(this->gameObjs[i + 25]);
+	}
+
+	index += NUMBER_OF_HAZARDS_AND_INTERACTABLES;
+
+	for (int i = 0; i < this->numberOfPassiveCreatures; i++)
+	{
+		treeObjs[index + i] = TreeObj(&this->passiveCreatures[i]);
+	}
+
+	index += numberOfPassiveCreatures;
+
+	for (int i = 0; i < NUMBER_OF_ITEMS_AND_HUD; i++)
+	{
+		treeObjs[index + i] = TreeObj(this->gameObjs[i + 42]);
+	}
+
+	return treeObjs;
 }
 
 bool Game::LoadGame()
 {
-	if (!this->yumetaro.Load(YUMETARO_BACKGROUND_COLOR, this->directX.GetDirectXGraphic()))
+	DirectXGraphic directXGraphic = this->directX.GetDirectXGraphic();
+
+	for (int i = 0; i < NUMBER_OF_ENEMIES; i++)
 	{
-		return 0;
+		this->gameObjs[i + 4]->Load(directXGraphic, ENEMIES_BACKGROUND_COLOR);
 	}
 
-	for (int i = 0; i < this->numberOfEnemies; i++)
+	for (int i = 0; i < NUMBER_OF_HAZARDS_AND_INTERACTABLES; i++)
 	{
-		this->enemies[i].Load(ENEMIES_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
+		this->gameObjs[i + 25]->Load(directXGraphic, HAZARDS_AND_INTERACTABLES_BACKGROUND_COLOR);
 	}
 
-	for (int i = 0; i < this->numberOfHazardsAndInteractables; i++)
+	for (int i = 0; i < NUMBER_OF_ITEMS_AND_HUD; i++)
 	{
-		this->hazardsAndInteractables[i].Load(HAZARDS_AND_INTERACTABLES_BACKGROUND_COLOR,
-			this->directX.GetDirectXGraphic());
-	}
-
-	for (int i = 0; i < this->numberOfItemsAndHUD; i++)
-	{
-		this->itemsAndHUD[i].Load(ITEMS_AND_HUD_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
+		this->gameObjs[i + 42]->Load(directXGraphic, ITEMS_AND_HUD_BACKGROUND_COLOR);
 	}
 
 	for (int i = 0; i < this->numberOfPassiveCreatures; i++)
 	{
-		this->passiveCreatures[i].Load(PASSIVE_CREATURES_BACKGROUND_COLOR,
-			this->directX.GetDirectXGraphic());
+		this->passiveCreatures[i].Load(PASSIVE_CREATURES_BACKGROUND_COLOR, directXGraphic);
 	}
 
-	this->background.LoadBackground(this->directX.GetDirectXGraphic());
-
-	this->boss.Load(BOSSES_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
-
-	this->treasure.Load(TREASURES_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
+	this->background.LoadBackground(directXGraphic);
+	this->boss.Load(BOSSES_BACKGROUND_COLOR, directXGraphic);
+	this->gameObjs[1]->Load(directXGraphic, YUMETARO_BACKGROUND_COLOR);
+	this->gameObjs[3]->Load(directXGraphic, TREASURES_BACKGROUND_COLOR);
 
 	this->background.LoadUselessObjs(this->uselessObjs);
 	
 	return 1;
 }
 
-// Vòng lặp game chính
 void Game::RunGame(HWND window)
 {
 	// Đảm bảo Direct3D device đã có
@@ -512,32 +425,32 @@ void Game::Render()
 			directXGraphic, this->camera);
 
 		Point cameraPoint = this->camera.GetPoint();
-		this->treasure.Draw(1, 0, graphicDevice, cameraPoint);
+		this->gameObjs[3]->Draw(1, 0, graphicDevice, cameraPoint);
 		this->yumetaro.Draw(2, 0, graphicDevice, cameraPoint);
 
-		for (int i = 0; i < this->numberOfEnemies; i++)
+		for (int i = 0; i < NUMBER_OF_ENEMIES; i++)
 		{
 			if (i <= 13)
 			{
-				this->enemies[i].Draw(1, 0, graphicDevice, cameraPoint);
+				this->gameObjs[i + 4]->Draw(1, 0, graphicDevice, cameraPoint);
 			}
 			else
 			{
-				this->enemies[i].Draw(17, 0, graphicDevice, cameraPoint);
+				this->gameObjs[i + 4]->Draw(17, 0, graphicDevice, cameraPoint);
 			}
 		}
 
-		for (int i = 0; i < this->numberOfHazardsAndInteractables - 1; i++)
+		for (int i = 0; i < NUMBER_OF_HAZARDS_AND_INTERACTABLES - 1; i++)
 		{
-			this->hazardsAndInteractables[i].Draw(1, 0, graphicDevice, cameraPoint);
+			this->gameObjs[i + 25]->Draw(1, 0, graphicDevice, cameraPoint);
 		}
 
-		this->hazardsAndInteractables[this->numberOfHazardsAndInteractables - 1].Draw(3, 0, 
-			graphicDevice, cameraPoint);
+		this->gameObjs[NUMBER_OF_HAZARDS_AND_INTERACTABLES - 1 + 25]->Draw(3, 0, graphicDevice, 
+			cameraPoint);
 
-		for (int i = 0; i < this->numberOfItemsAndHUD; i++)
+		for (int i = 0; i < NUMBER_OF_ITEMS_AND_HUD; i++)
 		{
-			this->itemsAndHUD[i].Draw(1, 0, graphicDevice, cameraPoint);
+			this->gameObjs[i + 42]->Draw(1, 0, graphicDevice, cameraPoint);
 		}
 
 		for (int i = 0; i < this->numberOfPassiveCreatures; i++)
@@ -566,13 +479,12 @@ void Game::Render()
 	graphicDevice.ShowBackbuffer();
 }
 
-// Giải phóng bộ nhớ và dọn dẹp trước khi kết thúc game
+Game::~Game()
+{
+	delete[] this->uselessObjs;
+}
+
 void Game::EndGame(HWND window)
 {
 	this->directX.ReleaseDirectX();
-}
-
-DirectX Game::GetDirectX()
-{
-	return this->directX;
 }

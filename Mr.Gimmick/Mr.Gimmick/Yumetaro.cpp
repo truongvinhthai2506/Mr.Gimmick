@@ -1,22 +1,20 @@
 ﻿#include "Yumetaro.h"
 
-Yumetaro::Yumetaro(const Yumetaro& yumetaro) : PlayableObj(yumetaro)
-{
-	
-}
-
 Yumetaro::Yumetaro()
 {
 
 }
 
-Yumetaro::Yumetaro(Point point, Velocity velocity, int numberOfAnimatedTiles, Dimension dimension, 
-	LPCWSTR fileSpriteName, int gameObjID) : PlayableObj(point, numberOfAnimatedTiles, velocity, 
+Yumetaro::Yumetaro(int gameObjID, Point point, Velocity velocity, int numberOfAnimatedTiles,
+	Dimension dimension, String fileSpriteName) : PlayableObj(point, numberOfAnimatedTiles, velocity, 
 	gameObjID)
 {
-	Sprite* sprite = new Sprite(dimension, fileSpriteName, 6, 0, 1);
-	this->animatedTiles[0] = new AnimatedTile(point, sprite);
-	SetDimension();
+	AddAnimatedTile(dimension, fileSpriteName, 6);
+}
+
+Yumetaro::Yumetaro(const Yumetaro& yumetaro) : PlayableObj(yumetaro)
+{
+
 }
 
 Yumetaro& Yumetaro::operator = (const Yumetaro& yumetaro)
@@ -26,15 +24,9 @@ Yumetaro& Yumetaro::operator = (const Yumetaro& yumetaro)
 	return *this;
 }
 
-bool Yumetaro::Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic)
+bool Yumetaro::Load(DirectXGraphic directXGraphic, Color transparentColor)
 {
-	// Tải texture với màu xanh là màu trong suốt
-	return this->animatedTiles[0]->Load(transparentColor, directXGrphic);
-}
-
-void Yumetaro::Animate()
-{
-	this->animatedTiles[0]->Animate();
+	return AnimatedObj::Load(directXGraphic, transparentColor);
 }
 
 void Yumetaro::Move(Dimension dimension)
@@ -81,4 +73,9 @@ void Yumetaro::Move(Dimension dimension)
 	{
 		//this->point.SetSecondValue(0);
 	}
+}
+
+void Yumetaro::Animate()
+{
+	this->animatedTiles[0]->Animate();
 }

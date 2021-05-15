@@ -151,6 +151,8 @@
     <ClInclude Include="Bosses.h" />
     <ClInclude Include="Box.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Color.h" />
+    <ClInclude Include="DataType.h" />
     <ClInclude Include="Device.h" />
     <ClInclude Include="DieState.h" />
     <ClInclude Include="Dimension.h" />
@@ -243,6 +245,8 @@
     <ClCompile Include="Bosses.cpp" />
     <ClCompile Include="Box.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Color.cpp" />
+    <ClCompile Include="DataType.cpp" />
     <ClCompile Include="Device.cpp" />
     <ClCompile Include="DieState.cpp" />
     <ClCompile Include="Dimension.cpp" />

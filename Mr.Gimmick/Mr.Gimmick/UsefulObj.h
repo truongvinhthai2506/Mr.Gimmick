@@ -6,5 +6,6 @@ class UsefulObj : public AnimatedAndImmovableObj
 {
 public:
     UsefulObj();
-    UsefulObj(Point point, int numberOfAnimatedTiles, int gameObjID);
+    UsefulObj(Point point, int numberOfAnimatedTiles, int gameObjID, int currentFrame, 
+        Dimension dimension, String fileSpriteName);
 };

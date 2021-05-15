@@ -1,5 +1,13 @@
 #include "AnimatedObj.h"
 
+void AnimatedObj::AddAnimatedTile(Dimension dimension, String fileSpriteName, int lastFrame, 
+	int currentFrame, int i)
+{
+	Sprite* sprite = new Sprite(dimension, fileSpriteName, lastFrame, 0, currentFrame);
+	this->animatedTiles[i] = new AnimatedTile(this->point, sprite);
+	SetDimension();
+}
+
 AnimatedObj::AnimatedObj()
 {
 	this->numberOfAnimatedTiles = 0;
@@ -79,7 +87,14 @@ void AnimatedObj::SetElement(int index, AnimatedTile* animatedTile)
 	this->animatedTiles[index] = animatedTile;
 }
 
-bool AnimatedObj::Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic)
+bool AnimatedObj::Load(DirectXGraphic directXGraphic, Color transparentColor)
 {
-	return false;
+	bool flag;
+
+	for (int i = 0; i < this->numberOfAnimatedTiles; i++)
+	{
+		flag = this->animatedTiles[i]->Load(transparentColor.GetColor(), directXGraphic);
+	}
+
+	return flag;
 }
