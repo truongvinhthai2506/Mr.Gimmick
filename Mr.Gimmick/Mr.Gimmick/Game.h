@@ -43,13 +43,9 @@ private:
 	Camera camera;
 	Yumetaro yumetaro;
 	Bosses boss;
-	Treasures treasure;
-	Enemies* enemies;
 	UselessObj** uselessObjs;
-	HazardsAndInteractables* hazardsAndInteractables;
-	ItemsAndHUD* itemsAndHUD;
 	PassiveCreatures* passiveCreatures;
-	int numberOfUselessObjs, numberOfEnemies, numberOfHazardsAndInteractables, numberOfItemsAndHUD;
+	int numberOfUselessObjs;
 	int numberOfPassiveCreatures;
 	DirectX directX;
 	HWND window;
@@ -59,21 +55,22 @@ private:
 	#pragma endregion
 public:
 	#pragma region Operations
-	bool InitGame(HWND window);
-	void UpdateGame();
-	void Render();
+	#pragma region Init
 	Game();
 	Game(const Game& game);
-	~Game();
-	TreeObj* InitTreeObjs();
+	bool InitGame(HWND window);
 	void InitUselessObjs(int key, int* numberOfUselessObjs);
 	void InitEnemies();
 	void InitHazardsAndInteractables();
 	void InitItemsAndHUD();
 	void InitPassiveCreatures();
+	TreeObj* InitTreeObjs();
+	#pragma endregion
 	bool LoadGame();
 	void RunGame(HWND window);
+	void UpdateGame();
+	void Render();
+	~Game();
 	void EndGame(HWND window);
-	DirectX GetDirectX();
 	#pragma endregion
 };
