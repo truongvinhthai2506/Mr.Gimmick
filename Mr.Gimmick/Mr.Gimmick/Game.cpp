@@ -27,6 +27,14 @@ Game::Game(const Game& game)
 	{
 		this->uselessObjs[i] = game.uselessObjs[i]->Clone();
 	}
+
+	this->numberOfPassiveCreatures = game.numberOfPassiveCreatures;
+	this->passiveCreatures = new PassiveCreatures[game.numberOfPassiveCreatures];
+
+	for (int i = 0; i < game.numberOfPassiveCreatures; i++)
+	{
+		this->passiveCreatures[i] = game.passiveCreatures[i];
+	}
 }
 
 bool Game::InitGame(HWND window)
@@ -43,8 +51,8 @@ bool Game::InitGame(HWND window)
 
 	this->yumetaro = Yumetaro(1);
 	this->gameObjs[1] = &this->yumetaro;
-	this->boss = Bosses(Point(16 * 70 - 4, 16 * 6), 2);
-	this->gameObjs[3] = new Treasures(Point(16 * 5 + 3, 16 * 5 + 3), 3);
+	this->boss = Bosses(Point(16 * 70 - 4, 16 * 6 + 2), 2);
+	this->gameObjs[3] = new Treasures(Point(16 * 5 + 3, 16 * 5 + 5), 3);
 
 	this->background = Background(NUMBER_OF_ROWS_LEVEL_ONE, NUMBER_OF_COLUMNS_LEVEL_ONE,
 		FILE_TILEMAP_PATH_LEVEL_ONE, NUMBER_OF_TILES_LEVEL_ONE, L"Level_1", BACKGROUND_COLOR_LEVEL_ONE);
@@ -115,8 +123,8 @@ void Game::InitEnemies()
 	this->gameObjs[15] = new Enemies(Point(16 * 108, 16 * 7), 15);
 	this->gameObjs[16] = new Enemies(Point(16 * 89, 16 * 10), 16);
 	this->gameObjs[17] = new Enemies(Point(16 * 85, 16 * 10), 17);
-	this->gameObjs[18] = new Enemies(Point(16 * 47, 16 * 40 - 3), 18, Dimension(26, 19.4));
-	this->gameObjs[19] = new Enemies(Point(16 * 117, 16 * 31 - 3), 19, Dimension(26, 19.4));
+	this->gameObjs[18] = new Enemies(Point(16 * 47, 16 * 40 - 3), 18, Dimension(26, 19.4), 17);
+	this->gameObjs[19] = new Enemies(Point(16 * 117, 16 * 31 - 3), 19, Dimension(26, 19.4), 17);
 }
 
 void Game::InitHazardsAndInteractables()
@@ -141,27 +149,27 @@ void Game::InitHazardsAndInteractables()
 	this->gameObjs[33] = new HazardsAndInteractables(Point(16 * 36, 16 * 28 - 2), 33, 6);
 	this->gameObjs[34] = new HazardsAndInteractables(Point(16 * 74, 16 * 42 - 2), 34, 6);
 	this->gameObjs[35] = new HazardsAndInteractables(Point(16 * 115 + 8, 16 * 41 + 1), 35, 1, 
-		Dimension(53, 77));
+		Dimension(53, 77), 3);
 }
 
 void Game::InitItemsAndHUD()
 {
-	this->gameObjs[42] = new ItemsAndHUD(Point(16 * 27, 16 * 19), 42, 2);
+	this->gameObjs[42] = new ItemsAndHUD(Point(16 * 27, 16 * 19 + 1), 42, 2);
 	this->gameObjs[43] = new ItemsAndHUD(Point(16 * 34, 16 * 43), 43, 3);
 	this->gameObjs[44] = new ItemsAndHUD(Point(16 * 126, 16 * 22), 44, 2);
-	this->gameObjs[45] = new ItemsAndHUD(Point(16 * 127 - 6, 16 * 4 - 3), 45, 4);
+	this->gameObjs[45] = new ItemsAndHUD(Point(16 * 127 - 6, 16 * 4 + 1), 45, 4, Dimension(16.5, 16.5));
 }
 
 void Game::InitPassiveCreatures()
 {
 	this->numberOfPassiveCreatures = NUMBER_OF_PASSIVE_CREATURES;
 	this->passiveCreatures = new PassiveCreatures[this->numberOfPassiveCreatures];
-	this->passiveCreatures[0] = PassiveCreatures(Point(16 * 110, 16 * 41), 36);
-	this->passiveCreatures[1] = PassiveCreatures(Point(16 * 106, 16 * 41), 37);
-	this->passiveCreatures[2] = PassiveCreatures(Point(16 * 102, 16 * 48 - 8), 38);
-	this->passiveCreatures[3] = PassiveCreatures(Point(16 * 98, 16 * 47), 39);
-	this->passiveCreatures[4] = PassiveCreatures(Point(16 * 94, 16 * 42), 40);
-	this->passiveCreatures[5] = PassiveCreatures(Point(16 * 90, 16 * 39), 41);
+	this->passiveCreatures[0] = PassiveCreatures(Point(16 * 110, 16 * 41), 36, 1);
+	this->passiveCreatures[1] = PassiveCreatures(Point(16 * 106, 16 * 41), 37, 2);
+	this->passiveCreatures[2] = PassiveCreatures(Point(16 * 102, 16 * 48 - 8), 38, 2);
+	this->passiveCreatures[3] = PassiveCreatures(Point(16 * 98, 16 * 47), 39, 3);
+	this->passiveCreatures[4] = PassiveCreatures(Point(16 * 94, 16 * 42), 40, 3);
+	this->passiveCreatures[5] = PassiveCreatures(Point(16 * 90, 16 * 39), 41, 3);
 
 	for (int i = 0; i < this->numberOfPassiveCreatures; i++)
 	{
@@ -256,7 +264,7 @@ void Game::RunGame(HWND window)
 	}
 
 	UpdateGame();
-	Render();
+	Draw();
 
 	// Kiểm tra phím escape (để kết thúc chương trình)
 	if (KEY_DOWN(VK_ESCAPE))
@@ -409,13 +417,14 @@ void Game::UpdateGame()
 	this->background.UpdateBackground(this->directX.GetDirectXGraphic());
 }
 
-void Game::Render()
+void Game::Draw()
 {
 	Sleep(1000 / FPS);
 
 	GraphicDevice graphicDevice = this->directX.GetDirectXGraphic().GetGraphicDevice();
 	this->quadtree.ListObjInCamera(this->camera, this->quadtree.GetRoot());
 	map<int, GameObj*> gameObjsInCamera = this->quadtree.GetGameObjsInCamera();
+	map<int, GameObj*>::iterator it;
 
 	// Bắt đầu render
 	if (graphicDevice.BeginRendering())
@@ -425,51 +434,12 @@ void Game::Render()
 			directXGraphic, this->camera);
 
 		Point cameraPoint = this->camera.GetPoint();
-		this->gameObjs[3]->Draw(1, 0, graphicDevice, cameraPoint);
-		this->yumetaro.Draw(2, 0, graphicDevice, cameraPoint);
+		this->yumetaro.Draw(graphicDevice, cameraPoint);
 
-		for (int i = 0; i < NUMBER_OF_ENEMIES; i++)
+		for (it = gameObjsInCamera.begin(); it != gameObjsInCamera.end(); it++)
 		{
-			if (i <= 13)
-			{
-				this->gameObjs[i + 4]->Draw(1, 0, graphicDevice, cameraPoint);
-			}
-			else
-			{
-				this->gameObjs[i + 4]->Draw(17, 0, graphicDevice, cameraPoint);
-			}
+			it->second->Draw(graphicDevice, cameraPoint);
 		}
-
-		for (int i = 0; i < NUMBER_OF_HAZARDS_AND_INTERACTABLES - 1; i++)
-		{
-			this->gameObjs[i + 25]->Draw(1, 0, graphicDevice, cameraPoint);
-		}
-
-		this->gameObjs[NUMBER_OF_HAZARDS_AND_INTERACTABLES - 1 + 25]->Draw(3, 0, graphicDevice, 
-			cameraPoint);
-
-		for (int i = 0; i < NUMBER_OF_ITEMS_AND_HUD; i++)
-		{
-			this->gameObjs[i + 42]->Draw(1, 0, graphicDevice, cameraPoint);
-		}
-
-		for (int i = 0; i < this->numberOfPassiveCreatures; i++)
-		{
-			if (i == 0)
-			{
-				this->passiveCreatures[i].Draw(1, 0, graphicDevice, cameraPoint);
-			}
-			else if (i < 3)
-			{
-				this->passiveCreatures[i].Draw(2, 0, graphicDevice, cameraPoint);
-			}
-			else
-			{
-				this->passiveCreatures[i].Draw(3, 0, graphicDevice, cameraPoint);
-			}
-		}
-
-		this->boss.Draw(3, 0, graphicDevice, cameraPoint);
 
 		// Dừng render
 		graphicDevice.EndRendering();

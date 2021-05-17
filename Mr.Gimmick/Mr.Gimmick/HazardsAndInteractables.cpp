@@ -6,10 +6,11 @@ HazardsAndInteractables::HazardsAndInteractables()
 }
 
 HazardsAndInteractables::HazardsAndInteractables(Point point, int gameObjID, int currentFrame, 
-	Dimension dimension, int numberOfAnimatedTiles, String fileSpriteName) : AnimatedObj(point, 
-	numberOfAnimatedTiles, gameObjID)
+	Dimension dimension, int indexOfRowInSprite, String fileSpriteName, int lastFrame)
+	: AnimatedObj(point, gameObjID, dimension, fileSpriteName, lastFrame, indexOfRowInSprite, 
+	currentFrame)
 {
-	AddAnimatedTile(dimension, fileSpriteName, 1, currentFrame);
+
 }
 
 HazardsAndInteractables& HazardsAndInteractables::operator = (

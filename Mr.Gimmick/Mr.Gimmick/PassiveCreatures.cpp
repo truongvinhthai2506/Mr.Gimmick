@@ -5,13 +5,11 @@ PassiveCreatures::PassiveCreatures()
 
 }
 
-PassiveCreatures::PassiveCreatures(Point point, int gameObjID, Velocity velocity, 
-	int numberOfAnimatedTiles, Dimension dimension, LPCWSTR fileSpriteName) : UnplayableObj(point, 
-	numberOfAnimatedTiles, velocity, gameObjID)
+PassiveCreatures::PassiveCreatures(Point point, int gameObjID, int indexOfRowInSprite, Velocity velocity,
+	Dimension dimension, String fileSpriteName, int lastFrame, int currentFrame) : UnplayableObj(point, 
+	velocity, gameObjID, dimension, fileSpriteName, lastFrame, indexOfRowInSprite, currentFrame)
 {
-	Sprite* sprite = new Sprite(dimension, fileSpriteName, 1, 0, 1);
-	this->animatedTiles[0] = new AnimatedTile(point, sprite); 
-	SetDimension();
+	
 }
 
 PassiveCreatures& PassiveCreatures::operator = (const PassiveCreatures& enemies)

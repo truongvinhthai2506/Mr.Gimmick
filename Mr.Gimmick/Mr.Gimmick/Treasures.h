@@ -13,5 +13,5 @@ class Treasures : public UsefulObj
 public:
     Treasures();
     Treasures(Point point, int gameObjID, int currentFrame = 1, Dimension dimension = Dimension(23, 50),
-        int numberOfAnimatedTiles = 1, String fileSpriteName = SPRITE_TREASURES_PATH);
+        String fileSpriteName = SPRITE_TREASURES_PATH, int lastFrame = 1, int indexOfRowInSprite = 1);
 };

@@ -6,5 +6,6 @@ class UnplayableObj : public AnimatedAndMovableObj
 {
 public:
 	UnplayableObj();
-	UnplayableObj(Point point, int numberOfAnimatedTiles, Velocity velocity, int gameObjID);
+	UnplayableObj(Point point, Velocity velocity, int gameObjID, Dimension dimension, 
+		String fileSpriteName, int lastFrame, int indexOfRowInSprite, int currentFrame);
 };

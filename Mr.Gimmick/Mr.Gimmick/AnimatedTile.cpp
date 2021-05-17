@@ -2,17 +2,18 @@
 
 AnimatedTile::AnimatedTile()
 {
-	this->numberOfDrawings = 0;
+	this->numberOfDrawings = this->indexOfRowInSprite = 0;
 	this->sprite = NULL;
 	this->texture = NULL;
 }
 
-AnimatedTile::AnimatedTile(Point point, Sprite* sprite) : Tile(point)
+AnimatedTile::AnimatedTile(Point point, Sprite* sprite, int indexOfRowInSprite) : Tile(point)
 {
 	this->dimension = sprite->GetDimension();
 	this->numberOfDrawings = 0;
 	this->sprite = sprite;
 	this->texture = NULL;
+	this->indexOfRowInSprite = indexOfRowInSprite;
 }
 
 AnimatedTile::AnimatedTile(const AnimatedTile& animatedTile)
@@ -22,6 +23,7 @@ AnimatedTile::AnimatedTile(const AnimatedTile& animatedTile)
 	this->numberOfDrawings = animatedTile.numberOfDrawings;
 	this->texture = animatedTile.texture;
 	this->sprite = animatedTile.sprite->Clone();
+	this->indexOfRowInSprite = animatedTile.indexOfRowInSprite;
 }
 
 AnimatedTile::~AnimatedTile()
@@ -29,7 +31,7 @@ AnimatedTile::~AnimatedTile()
 	delete this->sprite;
 }
 
-void AnimatedTile::Draw(GraphicDevice graphicDevice, Point cameraPoint, int indexOfRow, bool isRotate, 
+void AnimatedTile::Draw(GraphicDevice graphicDevice, Point cameraPoint, bool isRotate, 
 	LPDIRECT3DSURFACE9 backbuffer)
 {
 	this->numberOfDrawings++;
@@ -55,7 +57,7 @@ void AnimatedTile::Draw(GraphicDevice graphicDevice, Point cameraPoint, int inde
 
 	// Thiết đặt kích thước cho từng tile nguồn
 	Dimension dimension = this->sprite->GetDimension();
-	RECT sourceRectangle = this->sprite->GetSpriteHandler().GetTile(indexOfRow, dimension);
+	RECT sourceRectangle = this->sprite->GetSpriteHandler().GetTile(this->indexOfRowInSprite, dimension);
 
 	// Xác định vị trí của điểm tâm trong trường hợp xoay ảnh
 	D3DXVECTOR3 center;

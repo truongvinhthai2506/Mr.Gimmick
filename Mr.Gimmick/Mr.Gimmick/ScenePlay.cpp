@@ -60,7 +60,7 @@ void ScenePlay::Render()
 		DirectXGraphic directXGraphic = this->directX.GetDirectXGraphic();
 		this->background.DrawBackground(directXGraphic.GetGraphicDevice().GetBackbuffer(), directXGraphic, 
 			Camera());
-		yumetaro->Draw(2, 0, graphicDevice, Point());
+		//yumetaro->Draw(2, 0, graphicDevice, Point());
 
 		// Dừng render
 		graphicDevice.EndRendering();

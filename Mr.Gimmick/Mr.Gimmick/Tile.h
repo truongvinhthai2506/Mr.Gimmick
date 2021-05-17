@@ -12,8 +12,8 @@ public:
 	Tile();
 	Tile(Point point);
 	virtual bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGraphic);
-	virtual void Draw(GraphicDevice graphicDevice, Point cameraPoint, int indexOfRow = 0,
-		bool isRotate = 0, LPDIRECT3DSURFACE9 backbuffer = NULL) = 0;
+	virtual void Draw(GraphicDevice graphicDevice, Point cameraPoint, bool isRotate = 0, 
+		LPDIRECT3DSURFACE9 backbuffer = NULL) = 0;
 	virtual Tile* Clone() = 0;
 	virtual string GetType() = 0;
 };

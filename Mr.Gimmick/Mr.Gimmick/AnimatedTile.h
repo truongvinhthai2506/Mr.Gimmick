@@ -9,15 +9,15 @@
 class AnimatedTile : public Tile
 {
 protected:
-    int numberOfDrawings;
+    int numberOfDrawings, indexOfRowInSprite;
     Sprite* sprite;
     LPDIRECT3DTEXTURE9 texture;
 public:
     AnimatedTile();
-    AnimatedTile(Point point, Sprite* sprite);
+    AnimatedTile(Point point, Sprite* sprite, int indexOfRowInSprite = 1);
     AnimatedTile(const AnimatedTile& animatedTile);
     ~AnimatedTile();
-    void Draw(GraphicDevice graphicDevice, Point cameraPoint, int indexOfRow = 0, bool isRotate = 0,
+    void Draw(GraphicDevice graphicDevice, Point cameraPoint, bool isRotate = 0, 
         LPDIRECT3DSURFACE9 backbuffer = NULL);
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGraphic);
     RECT* GetRectangleOfSprite();

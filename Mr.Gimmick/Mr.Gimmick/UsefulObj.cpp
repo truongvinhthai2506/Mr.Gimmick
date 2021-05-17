@@ -5,9 +5,9 @@ UsefulObj::UsefulObj()
 
 }
 
-UsefulObj::UsefulObj(Point point, int numberOfAnimatedTiles, int gameObjID, int currentFrame, 
-	Dimension dimension, String fileSpriteName) : AnimatedAndImmovableObj(point, numberOfAnimatedTiles, 
-	gameObjID)
+UsefulObj::UsefulObj(Point point, int gameObjID, Dimension dimension, String fileSpriteName, 
+	int lastFrame, int indexOfRowInSprite, int currentFrame) : AnimatedAndImmovableObj(point, gameObjID, 
+	dimension, fileSpriteName, lastFrame, indexOfRowInSprite, currentFrame)
 {
-	AddAnimatedTile(dimension, fileSpriteName, 1, currentFrame);
+
 }

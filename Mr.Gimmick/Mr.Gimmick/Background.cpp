@@ -92,7 +92,7 @@ void Background::DrawBackground(LPDIRECT3DSURFACE9 backbuffer, DirectXGraphic di
 	{
 		for (int j = x / tileSize; j < (x + width) / tileSize; j++)
 		{
-			this->tiles[i][j]->Draw(directXGraphic.GetGraphicDevice(), camera.GetPoint(), 1, 0, backbuffer);
+			this->tiles[i][j]->Draw(directXGraphic.GetGraphicDevice(), camera.GetPoint(), 0, backbuffer);
 		}
 	}
 }

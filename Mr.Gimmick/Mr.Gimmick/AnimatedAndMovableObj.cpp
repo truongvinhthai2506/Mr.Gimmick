@@ -5,8 +5,10 @@ AnimatedAndMovableObj::AnimatedAndMovableObj()
 	this->state = NULL;
 }
 
-AnimatedAndMovableObj::AnimatedAndMovableObj(Point point, int numberOfAnimatedTiles, 
-	Velocity velocity, int gameObjID) : AnimatedObj(point, numberOfAnimatedTiles, gameObjID)
+AnimatedAndMovableObj::AnimatedAndMovableObj(Point point, Velocity velocity, int gameObjID, 
+	Dimension dimension, String fileSpriteName, int lastFrame, int indexOfRowInSprite, int currentFrame) 
+	: AnimatedObj(point, gameObjID, dimension, fileSpriteName, lastFrame, indexOfRowInSprite, 
+	currentFrame)
 {
 	this->velocity = velocity;
 	this->state = new IdleState();

@@ -6,12 +6,11 @@ Bosses::Bosses()
 }
 
 Bosses::Bosses(Point point, int gameObjID, Velocity velocity, int numberOfAnimatedTiles, 
-	Dimension dimension, LPCWSTR fileSpriteName) : UnplayableObj(point, numberOfAnimatedTiles, 
-	velocity, gameObjID)
+	Dimension dimension, String fileSpriteName, int lastFrame, int indexOfRowInSprite, int currentFrame) 
+	: UnplayableObj(point, velocity, gameObjID, dimension, fileSpriteName, lastFrame, indexOfRowInSprite, 
+	currentFrame)
 {
-	Sprite* sprite = new Sprite(dimension, fileSpriteName, 1, 0, 1);
-	this->animatedTiles[0] = new AnimatedTile(point, sprite);
-	SetDimension();
+
 }
 
 Bosses& Bosses::operator = (const Bosses& bosses)

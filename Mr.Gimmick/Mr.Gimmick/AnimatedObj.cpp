@@ -1,10 +1,10 @@
 #include "AnimatedObj.h"
 
 void AnimatedObj::AddAnimatedTile(Dimension dimension, String fileSpriteName, int lastFrame, 
-	int currentFrame, int i)
+	int indexOfRowInSprite, int currentFrame)
 {
 	Sprite* sprite = new Sprite(dimension, fileSpriteName, lastFrame, 0, currentFrame);
-	this->animatedTiles[i] = new AnimatedTile(this->point, sprite);
+	this->animatedTiles[0] = new AnimatedTile(this->point, sprite, indexOfRowInSprite);
 	SetDimension();
 }
 
@@ -17,8 +17,14 @@ AnimatedObj::AnimatedObj()
 AnimatedObj::AnimatedObj(Point point, int numberOfAnimatedTiles, int gameObjID) : GameObj(point, 
 	gameObjID)
 {
-	this->numberOfAnimatedTiles = numberOfAnimatedTiles;
-	this->animatedTiles = new AnimatedTile*[numberOfAnimatedTiles];
+	Init(numberOfAnimatedTiles);
+}
+
+AnimatedObj::AnimatedObj(Point point, int gameObjID, Dimension dimension, String fileSpriteName, 
+	int lastFrame, int indexOfRowInSprite, int currentFrame) : GameObj(point, gameObjID)
+{
+	Init(1);
+	AddAnimatedTile(dimension, fileSpriteName, lastFrame, indexOfRowInSprite, currentFrame);
 }
 
 void AnimatedObj::SetDimension()
@@ -74,11 +80,17 @@ AnimatedObj::~AnimatedObj()
 	Clean();
 }
 
-void AnimatedObj::Draw(int indexOfRow, bool isRotate, GraphicDevice graphicDevice, Point cameraPoint)
+void AnimatedObj::Init(int numberOfAnimatedTiles)
+{
+	this->numberOfAnimatedTiles = numberOfAnimatedTiles;
+	this->animatedTiles = new AnimatedTile*[numberOfAnimatedTiles];
+}
+
+void AnimatedObj::Draw(GraphicDevice graphicDevice, Point cameraPoint, bool isRotate)
 {
 	for (int i = 0; i < this->numberOfAnimatedTiles; i++)
 	{
-		this->animatedTiles[i]->Draw(graphicDevice, cameraPoint, indexOfRow);
+		this->animatedTiles[i]->Draw(graphicDevice, cameraPoint, isRotate);
 	}
 }
 

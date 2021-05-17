@@ -14,7 +14,7 @@ public:
 	InanimatedTile();
 	InanimatedTile(Point point, Image* image);
 	~InanimatedTile();
-	void Draw(GraphicDevice graphicDevice, Point cameraPoint, int indexOfRow = 0, bool isRotate = 0,
+	void Draw(GraphicDevice graphicDevice, Point cameraPoint, bool isRotate = 0, 
 		LPDIRECT3DSURFACE9 backbuffer = NULL);
 	bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGraphic);
 	Tile* Clone();
