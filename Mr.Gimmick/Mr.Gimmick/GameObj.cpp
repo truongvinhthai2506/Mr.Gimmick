@@ -15,7 +15,7 @@ bool GameObj::Load(DirectXGraphic directXGraphic, Color transparentColor)
     return 0;
 }
 
-void GameObj::Draw(int indexOfRow, bool isRotate, GraphicDevice graphicDevice, Point cameraPoint)
+void GameObj::Draw(GraphicDevice graphicDevice, Point cameraPoint, bool isRotate)
 {
 
 }

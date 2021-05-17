@@ -7,5 +7,6 @@ class PlayableObj : public AnimatedAndMovableObj
 public:
     PlayableObj(const PlayableObj& playableObj);
     PlayableObj();
-    PlayableObj(Point point, int numberOfAnimatedTiles, Velocity velocity, int gameObjID);
+    PlayableObj(Point point, Velocity velocity, int gameObjID, Dimension dimension, String fileSpriteName,
+        int lastFrame, int indexOfRowInSprite, int currentFrame);
 };

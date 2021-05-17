@@ -11,7 +11,8 @@ protected:
 	State* state;
 public:
 	AnimatedAndMovableObj();
-	AnimatedAndMovableObj(Point point, int numberOfAnimatedTiles, Velocity velocity, int gameObjID);
+	AnimatedAndMovableObj(Point point, Velocity velocity, int gameObjID, Dimension dimension, 
+		String fileSpriteName, int lastFrame, int indexOfRowInSprite, int currentFrame);
 	void Copy(const AnimatedAndMovableObj& animatedAndMovableObj);
 	AnimatedAndMovableObj(const AnimatedAndMovableObj& animatedAndMovableObj);
 	void Clean();

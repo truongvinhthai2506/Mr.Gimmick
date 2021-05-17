@@ -69,7 +69,7 @@ public:
 	bool LoadGame();
 	void RunGame(HWND window);
 	void UpdateGame();
-	void Render();
+	void Draw();
 	~Game();
 	void EndGame(HWND window);
 	#pragma endregion

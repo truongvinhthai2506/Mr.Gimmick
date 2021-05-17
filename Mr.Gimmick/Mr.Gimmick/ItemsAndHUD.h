@@ -13,5 +13,6 @@ class ItemsAndHUD : public UsefulObj
 public:
     ItemsAndHUD();
     ItemsAndHUD(Point point, int gameObjID, int currentFrame = 1, Dimension dimension = Dimension(16.5, 
-        17), int numberOfAnimatedTiles = 1, String fileSpriteName = SPRITE_ITEMS_AND_HUD_PATH);
+        17), String fileSpriteName = SPRITE_ITEMS_AND_HUD_PATH, int lastFrame = 1, 
+        int indexOfRowInSprite = 1);
 };

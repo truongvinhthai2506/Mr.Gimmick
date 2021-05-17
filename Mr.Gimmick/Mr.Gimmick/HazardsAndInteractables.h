@@ -13,7 +13,7 @@ class HazardsAndInteractables : public AnimatedObj
 public:
     HazardsAndInteractables();
     HazardsAndInteractables(Point point, int gameObjID, int currentFrame = 1, Dimension dimension = 
-        Dimension(17, 23), int numberOfAnimatedTiles = 1, 
-        String fileSpriteName = SPRITE_HAZARDS_AND_INTERACTABLES_PATH);
+        Dimension(17, 23), int indexOfRowInSprite = 1, 
+        String fileSpriteName = SPRITE_HAZARDS_AND_INTERACTABLES_PATH, int lastFrame = 1);
     HazardsAndInteractables& operator = (const HazardsAndInteractables& hazardsAndInteractables);
 };

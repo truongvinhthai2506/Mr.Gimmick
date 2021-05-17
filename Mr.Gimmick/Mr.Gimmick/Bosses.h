@@ -13,7 +13,8 @@ class Bosses : public UnplayableObj
 public:
     Bosses();
     Bosses(Point point, int gameObjID, Velocity velocity = Velocity(2, 0), int numberOfAnimatedTiles = 1,
-        Dimension dimension = Dimension(40, 50), LPCWSTR fileSpriteName = SPRITE_BOSSES_PATH);
+        Dimension dimension = Dimension(40, 50), String fileSpriteName = SPRITE_BOSSES_PATH, 
+        int lastFrame = 1, int indexOfRowInSprite = 3, int currentFrame = 1);
     Bosses& operator = (const Bosses& bosses);
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic);
 };

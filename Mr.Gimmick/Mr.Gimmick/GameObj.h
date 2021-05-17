@@ -14,6 +14,6 @@ public:
     GameObj();
     GameObj(Point point, int gameObjectID);
     virtual bool Load(DirectXGraphic directXGraphic, Color transparentColor = Color());
-    virtual void Draw(int indexOfRow, bool isRotate, GraphicDevice graphicDevice, Point cameraPoint);
+    virtual void Draw(GraphicDevice graphicDevice, Point cameraPoint, bool isRotate = 0);
     int GetID();
 };

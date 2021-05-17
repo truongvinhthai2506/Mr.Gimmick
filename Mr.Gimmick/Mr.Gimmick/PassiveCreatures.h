@@ -12,9 +12,9 @@ class PassiveCreatures : public UnplayableObj
 {
 public:
     PassiveCreatures();
-    PassiveCreatures(Point point, int gameObjID, Velocity velocity = Velocity(2, 0), 
-        int numberOfAnimatedTiles = 1, Dimension dimension = Dimension(20.4, 20.4), 
-        LPCWSTR fileSpriteName = SPRITE_PASSIVE_CREATURES_PATH);
+    PassiveCreatures(Point point, int gameObjID, int indexOfRowInSprite, Velocity velocity = Velocity(2, 
+        0), Dimension dimension = Dimension(20.4, 20.4), 
+        String fileSpriteName = SPRITE_PASSIVE_CREATURES_PATH, int lastFrame = 1, int currentFrame = 1);
     PassiveCreatures& operator = (const PassiveCreatures& enemies);
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic);
 };

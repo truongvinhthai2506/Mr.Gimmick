@@ -21,7 +21,7 @@ InanimatedTile::~InanimatedTile()
 	delete this->image;
 }
 
-void InanimatedTile::Draw(GraphicDevice graphicDevice, Point cameraPoint, int indexOfRow, bool isRotate, 
+void InanimatedTile::Draw(GraphicDevice graphicDevice, Point cameraPoint, bool isRotate, 
 	LPDIRECT3DSURFACE9 backbuffer)
 {
 	RECT destinationRectangle;

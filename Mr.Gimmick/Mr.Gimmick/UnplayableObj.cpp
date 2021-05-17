@@ -5,8 +5,10 @@ UnplayableObj::UnplayableObj()
 
 }
 
-UnplayableObj::UnplayableObj(Point point, int numberOfAnimatedTiles, Velocity velocity, 
-	int gameObjID) : AnimatedAndMovableObj(point, numberOfAnimatedTiles, velocity, gameObjID)
+UnplayableObj::UnplayableObj(Point point, Velocity velocity, int gameObjID, Dimension dimension, 
+	String fileSpriteName, int lastFrame, int indexOfRowInSprite, int currentFrame) 
+	: AnimatedAndMovableObj(point, velocity, gameObjID, dimension, fileSpriteName, lastFrame, 
+	indexOfRowInSprite, currentFrame)
 {
 
 }

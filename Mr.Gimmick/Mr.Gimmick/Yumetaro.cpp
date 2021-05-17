@@ -5,11 +5,11 @@ Yumetaro::Yumetaro()
 
 }
 
-Yumetaro::Yumetaro(int gameObjID, Point point, Velocity velocity, int numberOfAnimatedTiles,
-	Dimension dimension, String fileSpriteName) : PlayableObj(point, numberOfAnimatedTiles, velocity, 
-	gameObjID)
+Yumetaro::Yumetaro(int gameObjID, Point point, Velocity velocity, Dimension dimension, 
+	String fileSpriteName, int lastFrame, int indexOfRowInSprite, int currentFrame) : PlayableObj(point, 
+	velocity, gameObjID, dimension, fileSpriteName, lastFrame, indexOfRowInSprite, currentFrame)
 {
-	AddAnimatedTile(dimension, fileSpriteName, 6);
+
 }
 
 Yumetaro::Yumetaro(const Yumetaro& yumetaro) : PlayableObj(yumetaro)

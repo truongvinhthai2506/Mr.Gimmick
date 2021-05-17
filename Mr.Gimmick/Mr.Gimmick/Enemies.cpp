@@ -5,9 +5,10 @@ Enemies::Enemies()
 
 }
 
-Enemies::Enemies(Point point, int gameObjID, Dimension dimension, Velocity velocity, 
-	int numberOfAnimatedTiles, String fileSpriteName) : UnplayableObj(point, numberOfAnimatedTiles, 
-	velocity, gameObjID)
+Enemies::Enemies(Point point, int gameObjID, Dimension dimension, int indexOfRowInSprite, 
+	Velocity velocity, int numberOfAnimatedTiles, String fileSpriteName, int lastFrame, 
+	int currentFrame) : UnplayableObj(point, velocity, gameObjID, dimension, fileSpriteName, lastFrame, 
+	indexOfRowInSprite, currentFrame)
 {
-	AddAnimatedTile(dimension, fileSpriteName, 1);
+
 }

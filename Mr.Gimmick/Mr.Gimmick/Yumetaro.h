@@ -23,9 +23,9 @@ class Yumetaro : public PlayableObj
 public:
     Yumetaro();
     Yumetaro(int gameObjID, Point point = Point(YUMETARO_START_X, YUMETARO_START_Y), Velocity velocity =
-        Velocity(YUMETARO_VELOCITY_X, YUMETARO_VELOCITY_Y), int numberOfAnimatedTiles = 1, 
-        Dimension dimension = Dimension(YUMETARO_WIDTH, YUMETARO_HEIGHT),
-        String fileSpriteName = SPRITE_YUMETARO_PATH);
+        Velocity(YUMETARO_VELOCITY_X, YUMETARO_VELOCITY_Y), Dimension dimension = 
+        Dimension(YUMETARO_WIDTH, YUMETARO_HEIGHT), String fileSpriteName = SPRITE_YUMETARO_PATH, 
+        int lastFrame = 6, int indexOfRowInSprite = 2, int currentFrame = 1);
     Yumetaro(const Yumetaro& yumetaro);
     Yumetaro& operator = (const Yumetaro& yumetaro);
     bool Load(DirectXGraphic directXGraphic, Color transparentColor = YUMETARO_BACKGROUND_COLOR);
