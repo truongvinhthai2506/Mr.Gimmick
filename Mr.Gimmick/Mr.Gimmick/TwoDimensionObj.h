@@ -12,6 +12,7 @@ protected:
 	Dimension dimension;
 public:
 	void SetFirstValueOfPoint(int firstValueOfPoint);
+	void SetSecondValueOfPoint(int secondValueOfPoint);
 	void SetFirstValueOfDimension(int firstValueOfDimension);
 	void IncreaseValueOfPoint(Pair value);
 	void IncreaseSecondValueOfPoint(int additionalSecondValue);

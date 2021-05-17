@@ -88,10 +88,12 @@ void Background::DrawBackground(LPDIRECT3DSURFACE9 backbuffer, DirectXGraphic di
 	float height = camera.GetDimension().GetSecondValue();
 	int tileSize = TILE_SIZE, scale = SCALE;
 
-	for (int i = y / tileSize; i < (y + height) / tileSize; i++)
+	for (int i = 50 - y / tileSize; i <  50 - (y - height) / tileSize; i++)
 	{
 		for (int j = x / tileSize; j < (x + width) / tileSize; j++)
 		{
+			if (i == 18 && j == i)
+				i = i;
 			this->tiles[i][j]->Draw(directXGraphic.GetGraphicDevice(), camera.GetPoint(), 0, backbuffer);
 		}
 	}
@@ -110,7 +112,8 @@ void Background::LoadBackground(DirectXGraphic directXGraphic)
 		{
 			value = matrix[i][j];
 			this->tiles[i][j] = tiles[value]->Clone();
-			this->tiles[i][j]->SetPoint(Point((float)j * tileSize, (float)i * tileSize));
+			this->tiles[i][j]->SetPoint(Point((float)j * tileSize, MAP_LEVEL_ONE_HEIGHT - 
+				(float)i * tileSize));
 		}
 	}
 }
@@ -125,7 +128,8 @@ void Background::ChangeTile(int i, int j, int value, int firstTile, int lastTile
 			firstTile, lastTile, direction, i, j, tileSize);
 		this->tiles[i][j] = this->tileset.GetElement(indexOfNewImageOfTile)->Clone();
 		((AnimatedTile*)this->tiles[i][j])->SetNumberOfDrawings(numberOfDrawings);
-		this->tiles[i][j]->SetPoint(Point((float)j * tileSize, (float)i * tileSize));
+		this->tiles[i][j]->SetPoint(Point((float)j * tileSize, MAP_LEVEL_ONE_HEIGHT - 
+			(float)i * tileSize));
 	}
 }
 

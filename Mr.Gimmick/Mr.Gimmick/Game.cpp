@@ -41,7 +41,7 @@ bool Game::InitGame(HWND window)
 {
 	Dimension screenDimension = SCREEN_DIMENSION;
 
-	this->camera = Camera(Point(TILE_SIZE, TILE_SIZE * 13), Dimension(SCREEN_WIDTH / SCALE,
+	this->camera = Camera(Point(TILE_SIZE, TILE_SIZE * 37), Dimension(SCREEN_WIDTH / SCALE,
 		SCREEN_HEIGHT / SCALE));
 	this->scene = TwoDimensionObj(Point(16, 16 * 13));
 	this->scene.SetDimension(Dimension(16 * 64, 16 * 13));
@@ -288,15 +288,15 @@ void Game::UpdateGame()
 			case 1:
 			{
 				this->scene.IncreaseSecondValueOfPoint(-sceneHeight);
-				this->camera.SetPoint(Point(tileSize * 49, tileSize));
-				this->yumetaro.SetPoint(Point(tileSize * 57, 9 * tileSize - 4));
+				this->camera.SetPoint(Point(tileSize * 49, tileSize * 49));
+				this->yumetaro.SetPoint(Point(tileSize * 57, 41 * tileSize + 4));
 				break;
 			}
 			case 2:
 			{
 				this->scene.IncreaseSecondValueOfPoint(sceneHeight);
-				this->camera.SetPoint(Point(tileSize * 49, tileSize + sceneHeight));
-				this->yumetaro.SetPoint(Point(tileSize * 56, sceneHeight + 6 * tileSize - 4));
+				this->camera.SetPoint(Point(tileSize * 49, tileSize * 49 - sceneHeight));
+				this->yumetaro.SetPoint(Point(tileSize * 56, tileSize * 44 - sceneHeight + 4));
 				break;
 			}
 			case 3:
@@ -304,16 +304,16 @@ void Game::UpdateGame()
 				this->scene.IncreaseFirstValueOfPoint(tileSize * 32);
 				this->scene.IncreaseSecondValueOfPoint(sceneHeight);
 				this->scene.SetFirstValueOfDimension(tileSize * 32);
-				this->camera.SetPoint(Point(tileSize * 49, sceneHeight * 2 + tileSize));
-				this->yumetaro.SetPoint(Point(tileSize * 57, sceneHeight * 2 + tileSize * 8 - 4));
+				this->camera.SetPoint(Point(tileSize * 49, tileSize * 49 - sceneHeight * 2));
+				this->yumetaro.SetPoint(Point(tileSize * 57, tileSize * 42 - sceneHeight * 2 + 4));
 				break;
 			}
 			case 4:
 			{
 				this->scene.IncreaseSecondValueOfPoint(sceneHeight);
 				this->scene.SetFirstValueOfDimension(tileSize * 49);
-				this->camera.SetPoint(Point(tileSize * 33, sceneHeight * 3 + tileSize));
-				this->yumetaro.SetPoint(Point(tileSize * 37, sceneHeight * 3 + tileSize * 10 - 4));
+				this->camera.SetPoint(Point(tileSize * 33, tileSize * 49 - sceneHeight * 3));
+				this->yumetaro.SetPoint(Point(tileSize * 38 - 8, tileSize * 40 - sceneHeight * 3 + 4));
 				break;
 			}
 			case 5:
@@ -321,8 +321,8 @@ void Game::UpdateGame()
 				this->scene.IncreaseFirstValueOfPoint(tileSize * 48);
 				this->scene.SetFirstValueOfDimension(tileSize * 32);
 				this->camera.SetFirstValueOfPoint(tileSize * 81);
-				this->yumetaro.SetFirstValueOfPoint(tileSize * 84);
-				this->yumetaro.IncreaseSecondValueOfPoint(-tileSize * 2);
+				this->yumetaro.SetFirstValueOfPoint(tileSize * 82 - 8);
+				this->yumetaro.IncreaseSecondValueOfPoint(tileSize * 2);
 				break;
 			}
 			case 6:
@@ -330,36 +330,36 @@ void Game::UpdateGame()
 				this->scene.IncreaseFirstValueOfPoint(tileSize * 32);
 				this->scene.SetFirstValueOfDimension(tileSize * 16);
 				this->camera.SetFirstValueOfPoint(tileSize * 113);
-				this->yumetaro.SetFirstValueOfPoint(tileSize * 116);
+				this->yumetaro.SetFirstValueOfPoint(tileSize * 114 - 8);
 				break;
 			}
 			case 7:
 			{
 				this->scene.IncreaseSecondValueOfPoint(-sceneHeight);
-				this->camera.IncreaseSecondValueOfPoint(-sceneHeight);
-				this->yumetaro.IncreaseSecondValueOfPoint(-sceneHeight);
+				this->camera.IncreaseSecondValueOfPoint(sceneHeight);
+				this->yumetaro.IncreaseSecondValueOfPoint(sceneHeight);
 				break;
 			}
 			case 8:
 			{
 				this->scene.IncreaseSecondValueOfPoint(-sceneHeight);
-				this->camera.IncreaseSecondValueOfPoint(-sceneHeight);
-				this->yumetaro.IncreaseSecondValueOfPoint(-sceneHeight);
+				this->camera.IncreaseSecondValueOfPoint(sceneHeight);
+				this->yumetaro.IncreaseSecondValueOfPoint(sceneHeight);
 				break;
 			}
 			case 9:
 			{
 				this->scene.IncreaseValueOfPoint(Pair(-tileSize * 32, -sceneHeight));
-				this->camera.IncreaseSecondValueOfPoint(-sceneHeight);
-				this->yumetaro.IncreaseValueOfPoint(Pair(tileSize * 4, -sceneHeight));
+				this->camera.IncreaseSecondValueOfPoint(sceneHeight);
+				this->yumetaro.IncreaseValueOfPoint(Pair(tileSize * 4, sceneHeight));
 				this->scene.SetFirstValueOfDimension(tileSize * 48);
 				break;
 			}
 			case 10:
 			{
 				this->scene.IncreaseFirstValueOfPoint(-tileSize * 16);
-				this->camera.SetPoint(Point(tileSize * 65, tileSize));
-				this->yumetaro.SetPoint(Point(tileSize * 70, tileSize * 8 - 4));
+				this->camera.SetPoint(Point(tileSize * 65, tileSize * 49));
+				this->yumetaro.SetPoint(Point(tileSize * 70, tileSize * 42 + 4));
 				this->scene.SetFirstValueOfDimension(tileSize * 16);
 				break;
 			}
@@ -422,7 +422,9 @@ void Game::Draw()
 	Sleep(1000 / FPS);
 
 	GraphicDevice graphicDevice = this->directX.GetDirectXGraphic().GetGraphicDevice();
-	this->quadtree.ListObjInCamera(this->camera, this->quadtree.GetRoot());
+	Camera camera(Point(this->camera.GetPoint().GetFirstValue(), MAP_LEVEL_ONE_HEIGHT -
+		this->camera.GetPoint().GetSecondValue()), this->camera.GetDimension());
+	this->quadtree.ListObjInCamera(camera, this->quadtree.GetRoot());
 	map<int, GameObj*> gameObjsInCamera = this->quadtree.GetGameObjsInCamera();
 	map<int, GameObj*>::iterator it;
 

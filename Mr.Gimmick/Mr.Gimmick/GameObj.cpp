@@ -8,6 +8,7 @@ GameObj::GameObj()
 GameObj::GameObj(Point point, int gameObjID) : TwoDimensionObj(point)
 {
     this->gameObjID = gameObjID;
+    this->point.SetSecondValue(MAP_LEVEL_ONE_HEIGHT - this->point.GetSecondValue());
 }
 
 bool GameObj::Load(DirectXGraphic directXGraphic, Color transparentColor)

@@ -52,8 +52,7 @@ void AnimatedTile::Draw(GraphicDevice graphicDevice, Point cameraPoint, bool isR
 		D3DXSPRITE_ALPHABLEND);		// Sprite được vẽ hỗ trợ trong suốt
 
 	// Tạo vector để cập nhật vị trí của sprite
-	D3DXVECTOR3 position(this->point.GetFirstValue() - cameraPoint.GetFirstValue(), 
-		this->point.GetSecondValue() - cameraPoint.GetSecondValue(), 0);
+	D3DXVECTOR3 position = TransformHandler().GetPositionAfterTransform(this->point, cameraPoint);
 
 	// Thiết đặt kích thước cho từng tile nguồn
 	Dimension dimension = this->sprite->GetDimension();
