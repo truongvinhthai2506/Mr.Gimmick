@@ -27,7 +27,7 @@ void InanimatedTile::Draw(GraphicDevice graphicDevice, Point cameraPoint, bool i
 	RECT destinationRectangle;
 	float scale = SCALE;
 	float x = (this->point.GetFirstValue() - cameraPoint.GetFirstValue()) * scale;
-	float y = (this->point.GetSecondValue() - cameraPoint.GetSecondValue()) * scale;
+	float y = (-this->point.GetSecondValue() + cameraPoint.GetSecondValue()) * scale;
 	Dimension dimension = this->image->GetDimension();
 	float width = dimension.GetFirstValue();
 	float height = dimension.GetSecondValue();

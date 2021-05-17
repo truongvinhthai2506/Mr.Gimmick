@@ -5,6 +5,7 @@
 #include "Sprite.h"
 #include "TransformHandler.h"
 #include "Tilemap.h"
+#include "LevelOne.h"
 
 class AnimatedTile : public Tile
 {

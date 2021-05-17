@@ -5,6 +5,11 @@ void TwoDimensionObj::SetFirstValueOfPoint(int firstValueOfPoint)
 	this->point.SetFirstValue(firstValueOfPoint);
 }
 
+void TwoDimensionObj::SetSecondValueOfPoint(int secondValueOfPoint)
+{
+	this->point.SetSecondValue(secondValueOfPoint);
+}
+
 void TwoDimensionObj::SetFirstValueOfDimension(int firstValueOfDimension)
 {
 	this->dimension.SetFirstValue(firstValueOfDimension);
