@@ -9,6 +9,7 @@ class AnimatedAndMovableObj : public AnimatedObj
 protected:
 	Velocity velocity;
 	State* state;
+	string direction;
 public:
 	AnimatedAndMovableObj();
 	AnimatedAndMovableObj(Point point, Velocity velocity, int gameObjID, Dimension dimension, 
@@ -21,4 +22,6 @@ public:
 	virtual void Move(Dimension screenDimension);
 	void SetVelocity(Velocity velocity);
 	void SetState(State* state);
+	void SetDirection(string direction = "Left");
+	string GetDirection();
 };

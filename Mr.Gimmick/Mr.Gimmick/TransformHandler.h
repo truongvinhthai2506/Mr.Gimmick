@@ -11,7 +11,9 @@
 class TransformHandler : public Handler
 {
 public:
-	D3DXMATRIX* GetScaleMatrix(Pair scale = Pair(SCALE, SCALE));
-	const D3DXMATRIX* GetTransformMatrix(Point cameraPoint);
+	D3DXMATRIX GetScaleMatrix(Pair scale = Pair(SCALE, SCALE));
+	//const D3DXMATRIX* GetTransformMatrix(Point cameraPoint);
 	D3DXVECTOR3 GetPositionAfterTransform(Point positionInWorld, Point cameraPoint);
+	//D3DXMATRIX* GetRotateMatrix(float angle = 180);
+	D3DXMATRIX GetTranslationMatrix(Pair translation);
 };

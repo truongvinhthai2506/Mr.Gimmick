@@ -50,8 +50,26 @@ void InanimatedTile::Draw(GraphicDevice graphicDevice, Point cameraPoint, bool i
 	destinationRectangle.right = x + width;
 	destinationRectangle.bottom = y + height;
 
+	RECT sourceRectangle;
+	sourceRectangle.left = 0;
+	sourceRectangle.top = 0;
+	sourceRectangle.right = 16;
+	sourceRectangle.bottom = 16;
+
+	if (destinationRectangle.left < 0)
+	{
+		destinationRectangle.left = 0;
+		sourceRectangle.left -= x / scale;
+	}
+
+	if (destinationRectangle.right > 768)
+	{
+		destinationRectangle.right = 768;
+		sourceRectangle.right -= (x + width - 768) / scale;
+	}
+
 	// Draw the surface
-	graphicDevice.DrawSurface(this->surface, backbuffer, NULL, &destinationRectangle);
+	graphicDevice.DrawSurface(this->surface, backbuffer, &sourceRectangle, &destinationRectangle);
 }
 
 bool InanimatedTile::Load(D3DXCOLOR transparentColor, DirectXGraphic directXGraphic)

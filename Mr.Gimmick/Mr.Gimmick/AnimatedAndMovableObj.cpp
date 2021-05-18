@@ -12,12 +12,14 @@ AnimatedAndMovableObj::AnimatedAndMovableObj(Point point, Velocity velocity, int
 {
 	this->velocity = velocity;
 	this->state = new IdleState();
+	this->direction = "Right";
 }
 
 void AnimatedAndMovableObj::Copy(const AnimatedAndMovableObj& animatedAndMovableObj)
 {
 	this->velocity = animatedAndMovableObj.velocity;
 	this->state = animatedAndMovableObj.state->Clone();
+	this->direction = animatedAndMovableObj.direction;
 }
 
 AnimatedAndMovableObj::AnimatedAndMovableObj(const AnimatedAndMovableObj& animatedAndMovableObj) : 
@@ -71,4 +73,14 @@ void AnimatedAndMovableObj::SetVelocity(Velocity velocity)
 void AnimatedAndMovableObj::SetState(State* state)
 {
 	this->state = state;
+}
+
+void AnimatedAndMovableObj::SetDirection(string direction)
+{
+	this->direction = direction;
+}
+
+string AnimatedAndMovableObj::GetDirection()
+{
+	return this->direction;
 }
