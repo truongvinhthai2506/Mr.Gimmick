@@ -373,6 +373,7 @@ void Game::UpdateGame()
 		this->yumetaro.Move(Dimension(SCENE_MAX_WIDTH, SCREEN_HEIGHT));
 		this->camera.Update(this->yumetaro, this->scene, tileSize);
 		this->yumetaro.Animate();
+		this->yumetaro.SetDirection();
 	}
 
 	if (KEY_DOWN(VK_RIGHT))
@@ -381,6 +382,7 @@ void Game::UpdateGame()
 		this->yumetaro.Move(Dimension(SCENE_MAX_WIDTH, SCREEN_HEIGHT));
 		this->yumetaro.Animate();
 		this->camera.Update(this->yumetaro, this->scene, tileSize);
+		this->yumetaro.SetDirection("Right");
 	}
 
 	if (KEY_DOWN(VK_UP))
@@ -436,7 +438,7 @@ void Game::Draw()
 			directXGraphic, this->camera);
 
 		Point cameraPoint = this->camera.GetPoint();
-		this->yumetaro.Draw(graphicDevice, cameraPoint);
+		this->yumetaro.Draw(graphicDevice, cameraPoint, this->yumetaro.GetDirection() == "Left");
 
 		for (it = gameObjsInCamera.begin(); it != gameObjsInCamera.end(); it++)
 		{

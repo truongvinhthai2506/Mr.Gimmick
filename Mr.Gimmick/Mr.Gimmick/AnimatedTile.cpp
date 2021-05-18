@@ -58,22 +58,22 @@ void AnimatedTile::Draw(GraphicDevice graphicDevice, Point cameraPoint, bool isR
 	Dimension dimension = this->sprite->GetDimension();
 	RECT sourceRectangle = this->sprite->GetSpriteHandler().GetTile(this->indexOfRowInSprite, dimension);
 
-	// Xác định vị trí của điểm tâm trong trường hợp xoay ảnh
-	D3DXVECTOR3 center;
+	// Vẽ sprite
+	TransformHandler transformHandler;
+	D3DXMATRIX transformMatrix = transformHandler.GetScaleMatrix();
 
 	if (isRotate)
 	{
-		center = D3DXVECTOR3(dimension.GetFirstValue() / 2, dimension.GetSecondValue() / 2, 0);
+		transformMatrix = transformHandler.GetScaleMatrix(Pair(-3, 3)) * 
+			transformHandler.GetTranslationMatrix(Pair(47, 0));
+		position = D3DXVECTOR3(-position.x, position.y, 0);
 	}
 
-	// Vẽ sprite
-	TransformHandler transformHandler;
-	D3DXMATRIX transformMatrix = *transformHandler.GetScaleMatrix();
 	spriteHandler->SetTransform(&transformMatrix);
 	spriteHandler->Draw(
 		this->texture,		// Texture được sử dụng làm hình ảnh nguồn cho sprite
 		&sourceRectangle,		// Vị trí của tile trong sprite
-		(isRotate ? &center : NULL),		// Điểm tâm dùng để xoay
+		NULL,		// Điểm tâm dùng để xoay
 		&position,		// Vị trí của sprite
 		D3DCOLOR_XRGB(255, 255, 255));	// Màu thay thế được áp dụng khi vẽ sprite
 

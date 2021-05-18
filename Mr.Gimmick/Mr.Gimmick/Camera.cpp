@@ -19,9 +19,9 @@ void Camera::Update(Yumetaro yumetaro, TwoDimensionObj scene, int tileSize)
 		this->point.SetFirstValue(lim[0]);
 	}
 
-	if (this->point.GetFirstValue() > lim[1])
+	if (this->point.GetFirstValue() + this->dimension.GetFirstValue() > lim[1])
 	{
-		this->point.SetFirstValue(lim[1]);
+		this->point.SetFirstValue(lim[1] - this->dimension.GetFirstValue());
 	}
 }
 
