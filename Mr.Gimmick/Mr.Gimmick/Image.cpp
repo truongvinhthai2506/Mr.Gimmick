@@ -16,6 +16,11 @@ Dimension Image::GetDimension()
     return this->dimension;
 }
 
+void Image::SetDimension(Dimension dimension)
+{
+    this->dimension = dimension;
+}
+
 LPCWSTR Image::GetFilename()
 {
     return this->filename;

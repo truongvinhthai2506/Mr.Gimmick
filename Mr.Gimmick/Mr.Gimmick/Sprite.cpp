@@ -16,12 +16,37 @@ SpriteHandler Sprite::GetSpriteHandler()
 	return this->spriteHandler;
 }
 
-void Sprite::Animate()
+void Sprite::Animate(bool isChangeFrame)
 {
-	this->spriteHandler.Animate();
+	this->spriteHandler.Animate(isChangeFrame);
 }
 
 Sprite* Sprite::Clone()
 {
 	return new Sprite(*this);
+}
+
+void Sprite::SetAnimationDelay(int animationDelay)
+{
+	this->spriteHandler.SetAnimationDelay(animationDelay);
+}
+
+int Sprite::GetCurrentFrame()
+{
+	return this->spriteHandler.GetCurrentFrame();
+}
+
+void Sprite::SetCurrentFrame(int currentFrame)
+{
+	this->spriteHandler.SetCurrentFrame(currentFrame);
+}
+
+int Sprite::GetLastFrame()
+{
+	return this->spriteHandler.GetLastFrame();
+}
+
+void Sprite::SetLastFrame(int lastFrame)
+{
+	this->spriteHandler.SetLastFrame(lastFrame);
 }

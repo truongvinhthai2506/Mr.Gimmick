@@ -275,7 +275,7 @@ void Game::RunGame(HWND window)
 
 void Game::UpdateGame()
 {
-	int velocity = YUMETARO_VELOCITY_X, tileSize = TILE_SIZE;
+	int tileSize = TILE_SIZE;
 	
 	if (KEY_DOWN(0x56))
 	{
@@ -366,50 +366,8 @@ void Game::UpdateGame()
 		}
 	}
 
-	// Di chuyển bằng bàn phím
-	if (KEY_DOWN(VK_LEFT))
-	{
-		this->yumetaro.SetVelocity(Velocity(-velocity, 0));
-		this->yumetaro.Move(Dimension(SCENE_MAX_WIDTH, SCREEN_HEIGHT));
-		this->camera.Update(this->yumetaro, this->scene, tileSize);
-		this->yumetaro.Animate();
-		this->yumetaro.SetDirection();
-	}
-
-	if (KEY_DOWN(VK_RIGHT))
-	{
-		this->yumetaro.SetVelocity(Velocity(velocity, 0));
-		this->yumetaro.Move(Dimension(SCENE_MAX_WIDTH, SCREEN_HEIGHT));
-		this->yumetaro.Animate();
-		this->camera.Update(this->yumetaro, this->scene, tileSize);
-		this->yumetaro.SetDirection("Right");
-	}
-
-	if (KEY_DOWN(VK_UP))
-	{
-		if (camera.GetPoint().GetFirstValue() == SCENE_MIN_WIDTH ||
-			camera.GetPoint().GetFirstValue() == SCENE_MAX_WIDTH)
-		{
-			this->yumetaro.SetVelocity(Velocity(0, -velocity));
-			this->yumetaro.Move(Dimension(SCENE_MAX_WIDTH, SCREEN_HEIGHT));
-		}
-
-		this->yumetaro.Animate();
-		this->camera.Update(this->yumetaro, this->scene, tileSize);
-	}
-
-	if (KEY_DOWN(VK_DOWN))
-	{
-		if (camera.GetPoint().GetFirstValue() == SCENE_MIN_WIDTH ||
-			camera.GetPoint().GetFirstValue() == SCENE_MAX_WIDTH)
-		{
-			this->yumetaro.SetVelocity(Velocity(0, velocity));
-			this->yumetaro.Move(Dimension(SCENE_MAX_WIDTH, SCREEN_HEIGHT));
-		}
-
-		this->yumetaro.Animate();
-		this->camera.Update(this->yumetaro, this->scene, tileSize);
-	}
+	this->yumetaro.Update(KEY_DOWN(VK_LEFT), KEY_DOWN(VK_RIGHT), KEY_DOWN(VK_A), !KEY_UP(VK_A));
+	this->camera.Update(this->yumetaro, this->scene, tileSize);
 
 	for (int i = 0; i < this->numberOfUselessObjs; i++)
 	{

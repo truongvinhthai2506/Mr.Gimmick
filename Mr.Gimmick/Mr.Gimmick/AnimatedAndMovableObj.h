@@ -2,7 +2,7 @@
 
 #include "AnimatedObj.h"
 #include "Velocity.h"
-#include "IdleState.h"
+#include "State.h"
 
 class AnimatedAndMovableObj : public AnimatedObj
 {
@@ -19,9 +19,12 @@ public:
 	void Clean();
 	AnimatedAndMovableObj& operator = (const AnimatedAndMovableObj& animatedAndMovableObj);
 	~AnimatedAndMovableObj();
-	virtual void Move(Dimension screenDimension);
+	virtual void Move();
 	void SetVelocity(Velocity velocity);
+	State* GetState();
 	void SetState(State* state);
+	virtual void ChangeState(string stateName);
 	void SetDirection(string direction = "Left");
 	string GetDirection();
+	void SetDimension(Dimension dimension);
 };

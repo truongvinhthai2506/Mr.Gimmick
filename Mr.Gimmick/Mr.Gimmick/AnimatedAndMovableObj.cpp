@@ -52,17 +52,17 @@ AnimatedAndMovableObj::~AnimatedAndMovableObj()
 	Clean();
 }
 
-void AnimatedAndMovableObj::Move(Dimension screenDimension)
+void AnimatedAndMovableObj::Move()
 {
-	float x = this->point.GetFirstValue() + this->velocity.GetFirstValue();
-	float y = this->point.GetSecondValue() + this->velocity.GetSecondValue();
+	float x = this->point.GetFirstValue();
+	float y = this->point.GetSecondValue();
+	x += this->velocity.GetFirstValue();
+	y += this->velocity.GetSecondValue();
+	//float vX = this->velocity.GetFirstValue();
+	//y += -vX * vX / 27 + vX * 16 / 3;
 	Point newPoint(x, y);
-	this->point.SetValue(newPoint);
-	
-	for (int i = 0; i < this->numberOfAnimatedTiles; i++)
-	{
-		this->animatedTiles[i]->SetPoint(newPoint);
-	}
+	this->point = newPoint;
+	this->animatedTiles[0]->SetPoint(newPoint);
 }
 
 void AnimatedAndMovableObj::SetVelocity(Velocity velocity)
@@ -70,9 +70,19 @@ void AnimatedAndMovableObj::SetVelocity(Velocity velocity)
 	this->velocity.SetValue(velocity);
 }
 
+State* AnimatedAndMovableObj::GetState()
+{
+	return this->state;
+}
+
 void AnimatedAndMovableObj::SetState(State* state)
 {
 	this->state = state;
+}
+
+void AnimatedAndMovableObj::ChangeState(string stateName)
+{
+	this->state->ChangeState(stateName, this->state);
 }
 
 void AnimatedAndMovableObj::SetDirection(string direction)
@@ -83,4 +93,10 @@ void AnimatedAndMovableObj::SetDirection(string direction)
 string AnimatedAndMovableObj::GetDirection()
 {
 	return this->direction;
+}
+
+void AnimatedAndMovableObj::SetDimension(Dimension dimension)
+{
+	TwoDimensionObj::SetDimension(dimension);
+	this->animatedTiles[0]->SetDimension(dimension);
 }

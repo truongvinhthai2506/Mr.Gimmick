@@ -120,9 +120,9 @@ Sprite* AnimatedTile::GetSprite()
 	return this->sprite;
 }
 
-void AnimatedTile::Animate()
+void AnimatedTile::Animate(bool isChangeFrame)
 {
-	this->sprite->Animate();
+	this->sprite->Animate(isChangeFrame);
 }
 
 Tile* AnimatedTile::Clone()
@@ -183,4 +183,40 @@ int AnimatedTile::GetIndexOfNewImageOfTile(int value, int firstTile, int lastTil
 	}
 
 	return result;
+}
+
+void AnimatedTile::SetAnimationDelay(int animationDelay)
+{
+	this->sprite->SetAnimationDelay(animationDelay);
+}
+
+int AnimatedTile::GetCurrentFrame()
+{
+	return this->sprite->GetCurrentFrame();
+}
+
+void AnimatedTile::SetCurrentFrame(int currentFrame)
+{
+	this->sprite->SetCurrentFrame(currentFrame);
+}
+
+int AnimatedTile::GetLastFrame()
+{
+	return this->sprite->GetLastFrame();
+}
+
+void AnimatedTile::SetLastFrame(int lastFrame)
+{
+	this->sprite->SetLastFrame(lastFrame);
+}
+
+void AnimatedTile::SetIndexOfRowInSprite(int indexOfRowInSprite)
+{
+	this->indexOfRowInSprite = indexOfRowInSprite;
+}
+
+void AnimatedTile::SetDimension(Dimension dimension)
+{
+	TwoDimensionObj::SetDimension(dimension);
+	this->sprite->SetDimension(dimension);
 }

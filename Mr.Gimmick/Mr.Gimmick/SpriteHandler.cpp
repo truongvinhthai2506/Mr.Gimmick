@@ -13,16 +13,13 @@ SpriteHandler::SpriteHandler(int lastFrame, int animationDelay, int currentFrame
 	this->animationDelay = animationDelay;
 }
 
-void SpriteHandler::Animate()
+void SpriteHandler::Animate(bool isChangeFrame)
 {
-	// Có một animation delay
 	if (++this->animationCount > this->animationDelay)
 	{
-		// Tái lập bộ đếm
 		this->animationCount = 0;
 
-		// Animation sprite
-		if (++this->currentFrame > this->lastFrame)
+		if (isChangeFrame && ++this->currentFrame > this->lastFrame)
 		{
 			this->currentFrame = 1;
 		}
@@ -32,13 +29,37 @@ void SpriteHandler::Animate()
 RECT SpriteHandler::GetTile(int indexOfRow, Dimension dimension)
 {
 	float width = dimension.GetFirstValue(), height = dimension.GetSecondValue();
-
-	// Thiết đặt kích thước cho từng tile nguồn
 	RECT sourceRectangle;
+
 	sourceRectangle.right = this->currentFrame * width;
 	sourceRectangle.bottom = indexOfRow * height;
 	sourceRectangle.left = sourceRectangle.right - width;
 	sourceRectangle.top = sourceRectangle.bottom - height;
 
 	return sourceRectangle;
+}
+
+void SpriteHandler::SetAnimationDelay(int animationDelay)
+{
+	this->animationDelay = animationDelay;
+}
+
+int SpriteHandler::GetCurrentFrame()
+{
+	return this->currentFrame;
+}
+
+void SpriteHandler::SetCurrentFrame(int currentFrame)
+{
+	this->currentFrame = currentFrame;
+}
+
+int SpriteHandler::GetLastFrame()
+{
+	return this->lastFrame;
+}
+
+void SpriteHandler::SetLastFrame(int lastFrame)
+{
+	this->lastFrame = lastFrame;
 }
