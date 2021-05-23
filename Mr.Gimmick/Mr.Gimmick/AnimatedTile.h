@@ -23,11 +23,18 @@ public:
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGraphic);
     RECT* GetRectangleOfSprite();
     Sprite* GetSprite();
-    void Animate();
+    void Animate(bool isChangeFrame);
     Tile* Clone();
     string GetType();
     int GetNumberOfDrawings();
     void SetNumberOfDrawings(int numberOfDrawings);
     int GetIndexOfNewImageOfTile(int value, int firstTile, int lastTile, string direction, int i, int j, 
         int tileSize);
+    void SetAnimationDelay(int animationDelay);
+    int GetCurrentFrame();
+    void SetCurrentFrame(int currentFrame);
+    int GetLastFrame();
+    void SetLastFrame(int lastFrame);
+    void SetIndexOfRowInSprite(int indexOfRowInSprite);
+    void SetDimension(Dimension dimension);
 };

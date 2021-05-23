@@ -12,5 +12,6 @@ public:
 	Image();
 	Image(Dimension dimension, LPCWSTR filename);
 	Dimension GetDimension();
+	void SetDimension(Dimension dimension);
 	LPCWSTR GetFilename();
 };

@@ -11,6 +11,11 @@ private:
 public:
 	SpriteHandler();
 	SpriteHandler(int lastFrame, int animationDelay, int currentFrame, int animationCount);
-	void Animate();
+	void Animate(bool isChangeFrame);
 	RECT GetTile(int indexOfRow, Dimension dimension);
+	void SetAnimationDelay(int animationDelay);
+	int GetCurrentFrame();
+	void SetCurrentFrame(int currentFrame);
+	int GetLastFrame();
+	void SetLastFrame(int lastFrame);
 };

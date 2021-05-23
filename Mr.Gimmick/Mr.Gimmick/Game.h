@@ -24,6 +24,9 @@
 #define KEY_DOWN(vk_code) ((GetAsyncKeyState(vk_code) & 0x8000) ? 1 : 0)
 #define KEY_UP(vk_code) ((GetAsyncKeyState(vk_code) * 0x8000) ? 1 : 0)
 
+#define VK_A 0x41
+#define VK_B 0x42
+
 #define FULLSCREEN 0
 #define SCREEN_WIDTH 16 * TILE_SIZE * SCALE
 #define SCREEN_HEIGHT 12 * TILE_SIZE * SCALE

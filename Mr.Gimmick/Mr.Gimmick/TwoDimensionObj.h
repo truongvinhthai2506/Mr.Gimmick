@@ -13,7 +13,7 @@ protected:
 public:
 	void SetFirstValueOfPoint(int firstValueOfPoint);
 	void SetSecondValueOfPoint(int secondValueOfPoint);
-	void SetFirstValueOfDimension(int firstValueOfDimension);
+	void SetFirstValueOfDimension(float firstValueOfDimension);
 	void IncreaseValueOfPoint(Pair value);
 	void IncreaseSecondValueOfPoint(int additionalSecondValue);
 	void IncreaseFirstValueOfPoint(int additionalFirstValue);
@@ -23,5 +23,5 @@ public:
 	void SetPoint(Point point);
 	Dimension GetDimension();
 	Box GetBox();
-	void SetDimension(Dimension dimension);
+	virtual void SetDimension(Dimension dimension);
 };
